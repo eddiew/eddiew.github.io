@@ -13,31 +13,37 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
-compile '/stylesheet/' do
-  # don’t filter or layout
+# Index compilation
+compile '/' do
+  filter :erb
 end
 
+# Everything else complation
 compile '*' do
-  if item.binary?
-    # don’t filter binary items
-  else
-    filter :erb
-    layout 'default'
+  filter :erb if @config[:text_extensions].include? item[:extension]
+  case item[:extension]
+    when 'scss'
+      filter :sass, :syntax => :scss
+      filter :rainpress # unless @config[:debug]
+    when 'js'
+    # filter :jslint if @config[:debug]
+      filter :uglify_js unless @config[:debug]
+    when 'html'
   end
 end
 
-route '/stylesheet/' do
-  '/style.css'
+# Index routing is special for some reason
+route '/' do
+  '/index.html'
 end
 
+# Everything else routing
 route '*' do
-  if item.binary?
+  if item[:extension] == 'scss'
+    # Force Nanoc to use .css intead of .scss
+    item.identifier.chop + '.css'
+  else
     # Write item with identifier /foo/ to /foo.ext
     item.identifier.chop + '.' + item[:extension]
-  else
-    # Write item with identifier /foo/ to /foo/index.html
-    item.identifier + 'index.html'
   end
 end
-
-layout '*', :erb

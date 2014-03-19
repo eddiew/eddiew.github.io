@@ -1,0 +1,272 @@
+/*
+	Adapted from Astral 2.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+@mixin transition ($t_name, $dur, $t_type) {
+	-webkit-transition: $t_name $dur $t_type;
+	-moz-transition: $t_name $dur $t_type;
+	-ms-transition: $t_name $dur $t_type;
+	-o-transition: $t_name $dur $t_type;
+	transition: $t_name $dur $t_type;
+}
+
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	min-height: 100%;
+	overflow-y: scroll;
+	min-width: 480px;
+}
+
+body, input, textarea {
+	font-size: 14pt;
+	line-height: 1.75em;
+}
+
+h1 {
+	font-size: 2.4em;
+	letter-spacing: -0.015em;
+}
+
+h2 {
+	font-size: 1.8em;
+	letter-spacing: -0.015em;
+}
+
+h3, h4, h5, h6 {
+	font-size: 1.25em;
+	letter-spacing: -0.015em;
+}
+
+header {
+	margin: 0 0 1.5em 0;
+}
+
+ul.links
+{
+
+	li	{
+
+		&:before {
+			padding: 0 0.75em 0 0.75em;
+		}
+	}
+}
+
+.button {
+	padding: 0.7em 1.5em 0.7em 1.5em;
+}
+
+	.button-small {
+		font-size: 0.75em;
+	}
+	
+	.button-big	{
+		font-size: 1.25em;
+		padding: 0.5em 1.25em 0.5em 1.25em;
+	}
+	
+	.button-huge {
+		font-size: 1.5em;
+		padding: 0.5em 1.25em 0.5em 1.25em;
+	}
+
+.byline {
+	margin: 0.5em 0 0 0;
+}
+
+.is-gallery {
+
+	.image {
+		margin: 0;
+	}
+}
+	
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/
+		
+#wrapper
+{
+	width: 45em;
+	margin: 0 auto;
+	opacity: 0;
+
+	&.tall
+	{
+		padding-bottom: 6em;
+	}
+}
+
+/*********************************************************************************/
+/* Nav                                                                           */
+/*********************************************************************************/
+	
+#nav {
+	text-align: center;
+	height: 4.25em;
+	cursor: default;
+
+	a {
+		font-size: 2.5em;
+		margin: 0 0.25em 0 0.25em;
+		opacity: 0.35;
+		outline: 0;
+
+		:before {
+			font-size: 0.8em;
+		}
+
+		:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 50%;
+			bottom: -0.75em;
+			margin-left: -0.5em;
+			border-bottom: solid 0em #fff;
+			border-left: solid 0.5em transparent;
+			border-right: solid 0.5em transparent;
+			@include transition(border-bottom-width, .3s, ease-in-out);
+		}
+	
+		span {
+			display: block;
+			position: absolute;
+			background: #222222;
+			color: #fff;
+			top: -2.75em;
+			font-size: 0.3em;
+			height: 2.25em;
+			line-height: 2.25em;
+			left: 50%;
+			opacity: 0;
+			
+			/* Labels not wide enough? Increase its width below and set margin-left to ((width / 2) * -1) */
+			width: 5.5em;
+			margin-left: -2.75em;
+			@include transition(opacity, .15s, ease-in-out);
+		
+			:after {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: -0.4em;
+				left: 50%;
+				margin-left: -0.6em;
+				border-top: solid 0.6em #222222;
+				border-left: solid 0.6em transparent;
+				border-right: solid 0.6em transparent;
+			}
+		}
+
+		:hover {
+			opacity: 1.0;
+
+			span {
+				opacity: 1.0;
+			}	
+		}
+		
+		&.active {
+			opacity: 1.0;
+
+			:after {
+				border-bottom-width: 0.5em;
+			}
+		}
+	}
+}
+			
+/*********************************************************************************/
+/* Panels                                                                        */
+/*********************************************************************************/
+
+#main {
+	width: 45em;
+
+	.panel {
+		padding: 3.5em 2.5em 3.5em 2.5em;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 45em;
+	}
+
+	#me {
+		padding: 0;
+		height: 20em;
+	
+		#pic {
+			display: block;
+			position: absolute;
+			right: -1px;
+			top: 0;
+			height: 100%;
+			width: 33.3333%;
+		}
+		
+		header {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			margin-left: 2.5em;
+		}
+		
+		h1 {
+			position: absolute;
+			left: 0;
+			bottom: 52.5%;
+			margin: 0;
+		}
+		
+		.byline {
+			position: absolute;
+			left: 0;
+			top: 52.5%;
+			font-size: 1.5em;
+			letter-spacing: -0.015em;
+			margin-top: 0;
+		}
+	}
+
+	#work {
+		#workSlide {
+			height: 16rem;
+			.slide {
+		      	left: 0;
+		      	top: 0;
+		      	margin: 7.25em 2.5em 2.5em 2.5em;
+				width: 40em;
+				.slidePic {
+					float: right;
+					height: 16rem;
+					width: 16rem;
+					margin-left: 2rem;
+				}
+				.slideContent {
+
+				}
+			}
+		}
+	}
+}
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+
+#footer {
+}

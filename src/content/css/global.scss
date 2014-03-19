@@ -1,0 +1,480 @@
+@charset 'UTF-8';
+// normalize.css
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden],template{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a{background:transparent}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,300");
+
+@font-face {
+  font-family: "fontAwesome";
+  src:url("fonts/fa.eot");
+  src:url("fonts/fa.eot?#iefix") format("embedded-opentype"),
+    url("fonts/fa-woff.woff") format("woff"),
+    url("fonts/fa-ttf.ttf") format("truetype"),
+    url("fonts/fa-svg.svg#fontAwesome") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+	Adapted from Astral 2.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+@mixin transition ($t_name, $dur, $t_type) {
+	-webkit-transition: $t_name $dur $t_type;
+	-moz-transition: $t_name $dur $t_type;
+	-ms-transition: $t_name $dur $t_type;
+	-o-transition: $t_name $dur $t_type;
+	transition: $t_name $dur $t_type;
+}
+
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	// Fallback for browsers that don't support pseudo elements.
+	background: url('/pics/bg.jpg');
+	background-size: 100% 100%;
+	:before {
+		content: '';
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background: url('/pics/bg.jpg');
+		background-size: 100% 100%;
+	}
+
+	// Applies a noise pattern to the background
+	:after {
+		content: '';
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: url('/pics/overlay.png');
+		z-index: -1;
+	}
+	header {
+		margin-bottom: 1.5em;
+	}
+}
+
+body, input, textarea {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: #777;
+}
+
+strong, b {
+	font-weight: 400;
+	color: #363636;
+}
+
+h1, h2, h3, h4,h5, h6 {
+	font-weight: 400;
+	color: #363636;
+}
+
+blockquote {
+	border-left: solid 0.5em #ddd;
+	padding: 1em 0 1em 2em;
+	font-style: italic;
+}
+
+em, i {
+	font-style: italic;
+}
+
+hr {
+	border: 0;
+	border-top: solid 1px #ddd;
+	padding: 1.5em 0 0 0;
+	margin: 1.75em 0 0 0;
+}
+
+sub {
+	position: relative;
+	top: 0.5em;
+	font-size: 0.8em;
+}
+
+sup {
+	position: relative;
+	top: -0.5em;
+	font-size: 0.8em;
+}
+
+table {
+	width: 100%;
+	.style1 {
+		width: 100%;
+		tbody tr:nth-child(2n+2) {
+			background: #f4f4f4;
+		}
+		td {
+			padding: 0.5em 1em 0.5em 1em;
+		}
+		th {
+			text-align: left;
+			font-weight: 400;
+			padding: 0.5em 1em 0.5em 1em;
+		}
+		thead {
+			background: #222222;
+			color: #fff;
+		}
+		tfoot {
+			background: #eee;
+		}
+	}
+}
+
+form {
+	input.text, select, textarea {
+		border: 0;
+		background: #f0f0f0;
+		padding: 0.65em;
+		width: 100%;
+	}
+
+	input.button, input.text, select, textarea {
+		-webkit-appearance: none;
+	}
+	
+	textarea {
+		height: 15em;
+	}
+	
+	input:focus, select:focus, textarea:focus {
+		background: #f5f5f5;
+	}
+
+	::-webkit-input-placeholder {
+		color: #999;
+	}
+
+	:-moz-placeholder {
+		color: #999;
+	}
+
+	::-moz-placeholder {
+		color: #999;
+	}
+
+	:-ms-input-placeholder {
+		color: #999;
+	}		
+}
+
+br.clear {
+	clear: both;
+}
+
+p, ul, ol, dl, table, blockquote, form {
+	margin-bottom: 2em;
+}
+
+section, article {
+	margin-bottom: 3em;
+	> :last-child {
+		margin-bottom: 0;
+	}
+	:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.image {
+	display: inline-block;
+	img
+	{
+		display: block;
+		width: 100%;
+	}
+}
+
+.image-full {
+	display: block;
+	width: 100%;
+	margin: 0 0 2em 0;
+}
+
+.image-left {
+	float: left;
+	margin: 0 2em 2em 0;
+}
+
+.image-centered {
+	display: block;
+	margin: 0 0 2em 0;
+	img {
+		margin: 0 auto;
+		width: auto;
+	}
+}
+	
+.button {
+	display: inline-block;
+	background-color: #222222;
+	color: #fff;
+	border: 0;
+	cursor: pointer;
+	outline: 0;
+	margin: 1em 0 0 0;
+	@include transition(background-color, .15s, ease-in-out);
+
+	:hover {
+		background-color: #333333;
+	}
+	
+	:active {
+		background-color: #444444;
+	}
+}
+	.button-alt {
+		background-color: #777777;
+
+		&:hover {
+			background-color: #888888;
+		}
+		
+		&:active {
+			background-color: #999999;
+		}
+	}
+
+	.button-small {
+	}
+	
+	.button-big {
+	}
+	
+	.button-huge {
+	}
+
+ul.style1 {
+	list-style: disc;
+	padding-left: 1em;
+
+	li {
+		padding-left: 0.5em;
+	}
+}
+
+ul.links {
+
+	li {
+		display: inline-block;
+
+		&:before {
+			display: inline;
+			content: '\2022';
+			opacity: 0.5;
+		}
+	
+		&:first-child:before {
+			display: none;
+		}
+	}
+}
+	
+ol.style1 {
+	list-style: decimal;
+	padding-left: 1.25em;
+
+	li {
+		padding-left: 0.25em;
+	}
+}
+
+.byline {
+	display: block;
+	color: #aaa;
+}
+
+/*********************************************************************************/
+/* Icons                                                                         */
+/* Selected from Font Awesome by Dave Gandy | http://fontawesome.io              */
+/* Licensed under the SIL OFL 1.1 (font), MIT (CSS)                              */
+/*********************************************************************************/
+
+[class^="fa-"]:before,
+[class*=" fa-"]:before {
+	display:inline-block;
+	font-family: "fontAwesome" !important;
+	font-size: 1.25em;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	text-decoration: none;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.fa-folder:before 	{content: "0";}
+.fa-envelope:before {content: "1";}
+.fa-linkedin:before {content: "2";}
+.fa-github:before 	{content: "3";}
+.fa-home:before 	{content: "4";}
+.fa-me:before 		{content: "5";}
+
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/
+
+#wrapper {
+	@include transition(padding, .3s, ease-in-out);
+}
+
+/*********************************************************************************/
+/* Nav                                                                           */
+/*********************************************************************************/
+	
+#nav {
+
+	a {
+		position: relative;
+		display: inline-block;
+		color: #fff;
+		width: 1em;
+		height: 1em;
+		line-height: 0.9em;
+		@include transition(opacity, .15s, ease-in-out);
+		-webkit-transform: translateZ(0);// Without this, Chrome will move things 1px during opacity animations
+
+		&.icon:before {
+			padding-right: 0;
+		}
+	}
+}
+		
+/*********************************************************************************/
+/* Panels                                                                        */
+/*********************************************************************************/
+
+#main {
+	position: relative;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+}
+
+.panel {
+	position: relative;
+}
+
+/* Me */
+	
+#me #pic {
+	position: relative;
+	display: block;
+	background: url('http://placehold.it/300x400');// 3:4 aspect ratio
+	background-size: cover;
+}
+
+/* Work */
+
+#sp1 {
+	background-image: url('http://placehold.it/100x100');
+}
+#sp2 {
+	background-image: url('http://placehold.it/200x200');
+}
+#sp3 {
+	background-image: url('http://placehold.it/300x300');
+}
+
+/*********************************************************************************/
+/* Slideshows                                                                    */
+/*********************************************************************************/
+
+.slideshow {
+	overflow: hidden;
+	box-shadow: 0 0 0 #CDF;
+	@include transition(box-shadow, 0.15s, ease-in-out);
+  	.slide {
+  		position: absolute;
+		opacity: 0;
+		@include transition(opacity, 0.618s, ease-in-out);
+      	.slidePic {
+      		background-size: contain;
+      		background-position: center;
+      		background-repeat: no-repeat;
+      	}
+		&.active {
+			opacity: 1;
+		}
+      	p {
+      		text-overflow: ellipsis;
+      		margin: 0;
+      	}
+	}
+  	:hover {
+		box-shadow: 0 0 1em #CDF;
+  	}
+}
+.slideNav {
+	height: 0.618rem;
+	text-align: center;
+	.slideNavDot {
+		position: relative;
+		display: inline-block;
+		background-color: #ddd;
+		border-radius: 50%;
+		width: 0.618rem;
+		height: 0.618rem;
+		margin: 0 1rem;
+		@include transition(background-color, 0.618s, ease-in-out);
+		&.active {
+			background-color: #999;
+		}
+		:hover {
+			@include transition(background-color, 0.15s, ease-in-out);
+			background-color: #bbb;
+			cursor: pointer;
+		}
+	}
+}
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+
+#footer {
+	color: #ccc;
+	color: rgba(255,255,255,0.45);
+	text-align: center;
+	font-size: 0.75em;
+	padding: 2em 0 0 0;
+
+	ul {
+		padding: 0;
+	}
+
+	a {
+		color: #ddd;
+		color: rgba(255,255,255,0.65);
+		@include transition(color, .15s, ease-in-out);
+
+		:hover {
+			color: rgba(255,255,255,1.0);
+		}
+	}
+}
