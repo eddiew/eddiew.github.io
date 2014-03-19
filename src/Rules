@@ -16,6 +16,7 @@
 # Index compilation
 compile '/' do
   filter :erb
+  filter :haml
 end
 
 # Everything else complation
@@ -28,7 +29,8 @@ compile '*' do
     when 'js'
     # filter :jslint if @config[:debug]
       filter :uglify_js unless @config[:debug]
-    when 'html'
+    when 'haml'
+      filter :haml
   end
 end
 
