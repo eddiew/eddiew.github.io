@@ -9,20 +9,36 @@
 		%title Eddie Wang
 		%link(rel="stylesheet" type="text/css" href="css/global.css" class="global")
 		%link(rel="stylesheet" type="text/css" href="css/pc.css" class="screenSpecific" id="pc")
-		%link(rel="stylesheet" type="text/css" href="css/tablet.css" class="screenSpecific" id="tablet" disabled)
-		%link(rel="stylesheet" type="text/css" href="css/phone.css" class="screenSpecific" id="phone" disabled)
+		%link(rel="stylesheet" type="text/css" href="css/mobile.css" class="screenSpecific" id="mobile" disabled)
 		-# Implement conditional non-concatenation for debugging?
 		%script(src="js/head.js" type="text/javascript")
 	%body
-		%div(id="wrapper")
-			%nav
-				%ul
-					%li Home
-					%li Portfolio
-					%li About
-					%li Contact
-			%div
-				%article Placeholder
+		%nav(id="nav")
+			%header
+				%h1 Eddie Wang
+			%ul
+				%li <a href="#home">Home</a>
+				%li <a href="#about">About</a>
+				%li <a href="#portfolio">Portfolio</a>
+				%li <a href="#contact">Contact</a>
+		%main(id="main")
+			%section(id="home")
+				-# Add a bunch of fade-ins or some other cool shit
+				%h1 HELLO.
+				-# TODO: replace this with something more interesting
+				%h2 Scroll down to check me out.
+				-# Show an arrow or something. Do parallax scrolling?
+			-# Maybe include blog posts?
+			%section(id="about")
+				%h1 About Me
+				%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel mi odio. Nulla rutrum hendrerit urna, nec aliquet urna laoreet euismod. Phasellus porttitor nibh ut tincidunt tincidunt. Nulla aliquam vulputate vestibulum. Etiam rhoncus posuere ipsum in interdum. Vestibulum quis ultrices mauris. Cras viverra suscipit dolor. Vestibulum congue viverra pharetra. Aenean nec lobortis neque.
+				-# TODO
+			%section(id="portfolio")
+				%h1 Things I've Built
+				-# TODO
+			%section(id="contact")
+				%h1 Get In Touch
+				-# TODO
 		-# Scripts
 		%script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript")
 		%script(src="js/body.js" type="text/javascript")

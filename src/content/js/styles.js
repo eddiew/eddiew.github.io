@@ -1,3 +1,20 @@
+// This file handles responsive stylesheet switching
+
+// TODO: lazy stylesheet link creation
+
+var activeLayout = 'pc';
+
+// Hash all layouts to eliminate DOM search time
+layouts = (function () {
+        var layoutTable = {},
+            layoutsArray = document.getElementsByClassName("screenSpecific"),
+            i,
+            layout;
+        for(i = 0; layout = layoutsArray[i]; i++) // Can't use a for each loop here for some reason
+            layoutTable[layout.id] = layout;
+        return layoutTable;
+    }());
+
 // getBrowserWidth is adapted from The Man in Blue Resolution Dependent Layout Script
 // http://www.themaninblue.com/experiment/ResolutionLayout/
 function getBrowserWidth() {
@@ -21,22 +38,22 @@ function changeLayout() {
 
 function chooseLayout() {
     var browserWidth = getBrowserWidth();
-    if (browserWidth >= 1024)
+    if (browserWidth > 540)
         return 'pc';
-    else if (browserWidth <= 360)
-        return 'phone';
     else
-        return 'tablet';
+        return 'mobile';
 }
 
 // addEvent() by John Resig
-function addEvent( obj, type, fn ) {
+function addEvent(obj, type, fn) {
     if (obj.addEventListener)
-        obj.addEventListener( type, fn, false );
+        obj.addEventListener(type, fn, false);
     else if (obj.attachEvent) {
         obj["e"+type+fn] = fn;
-        obj[type+fn] = function(){obj["e"+type+fn]( window.event ); }
-        obj.attachEvent( "on"+type, obj[type+fn] );
+        obj[type+fn] = function() {
+            obj["e"+type+fn](window.event);
+        }
+        obj.attachEvent("on"+type, obj[type+fn]);
     }
 }
 
@@ -44,19 +61,6 @@ function addEvent( obj, type, fn ) {
 function triggerEvent(obj, type) {
     obj.dispatchEvent(new Event(type));
 }
-
-// Hash all layouts to eliminate DOM search time
-layouts = (function () {
-        var layoutTable = {},
-            layoutsArray = document.getElementsByClassName("screenSpecific"),
-            i,
-            layout;
-        for(i = 0; layout = layoutsArray[i]; i++) // Can't use a for each loop here for some reason
-            layoutTable[layout.id] = layout;
-        return layoutTable;
-    }());
-
-activeLayout = 'pc'; // TODO: un-hardcode this
 
 // Initialize correct stylesheet
 addEvent(window, 'load', changeLayout);
