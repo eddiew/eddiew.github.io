@@ -16,7 +16,7 @@
 # Index compilation
 compile '/' do
   filter :erb
-  filter :haml
+  filter :haml, ugly: !@config[:debug]
 end
 
 # Everything else complation
@@ -24,13 +24,13 @@ compile '*' do
   filter :erb if @config[:text_extensions].include? item[:extension]
   case item[:extension]
     when 'scss'
-      filter :sass, :syntax => :scss
+      filter :sass, syntax: :scss
       filter :rainpress # unless @config[:debug]
     when 'js'
     # filter :jslint if @config[:debug]
       filter :uglify_js unless @config[:debug]
     when 'haml'
-      filter :haml
+      filter :haml, ugly: !@config[:debug]
   end
 end
 
