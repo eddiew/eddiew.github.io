@@ -1,4 +1,5 @@
 // This file handles responsive stylesheet switching
+// NOTE: JQuery and DOM are not yet loaded!
 
 // TODO: lazy stylesheet link creation
 

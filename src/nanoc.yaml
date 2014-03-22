@@ -65,4 +65,4 @@ debug: false
 jsHead: ['styles']
 
 # Scripts to load at the end of the HTML body
-jsBody: ['pos']
+jsBody: ['scroll']

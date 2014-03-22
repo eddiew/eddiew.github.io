@@ -12,6 +12,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 	transition: $t_name $dur $t_type;
 }
 
+$transitionSpeedMinor: .15s;
+
 $theme: "light";
 
 // Light Theme
@@ -61,6 +63,7 @@ body {
 	a {
 		color: $colorAccent;
 		text-decoration: none;
+		@include transition(color, $transitionSpeedMinor, ease-in-out);
 
 		:hover, :active {
 			color: $colorAccentActive;
@@ -74,6 +77,15 @@ body {
 
 		ul {
 			list-style: none;
+			padding-left: 1rem;
+
+			li {
+				margin: 2rem 0;
+
+				.active {
+					color: $colorAccentActive;
+				}
+			}
 		}
 	}
 
