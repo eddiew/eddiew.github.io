@@ -1,5 +1,5 @@
 !!! 5
-%html(lang="en")
+%html(lang="en" class="no-js")
 	%head
 		%meta(charset="utf-8")
 		%meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -7,9 +7,7 @@
 		%meta(name="description" content="Eddie Wang's Portfolio Website")
 		%meta(name="keywords" content="Eddie Wang")
 		%title Eddie Wang
-		%link(rel="stylesheet" type="text/css" href="css/global.css" class="global")
-		%link(rel="stylesheet" type="text/css" href="css/pc.css" class="screenSpecific" id="pc")
-		%link(rel="stylesheet" type="text/css" href="css/mobile.css" class="screenSpecific" id="mobile" disabled)
+		%link(rel="stylesheet" type="text/css" href="css/style.css")
 		-# Implement conditional use of unconcatenated scripts?
 		%script(src="js/head.js" type="text/javascript")
 	%body
@@ -42,10 +40,19 @@
 				-# finish this, too
 				%p And I'm pretty good at it. Even if I don't have the experience you're looking for, you can count on my ability to 
 				%h2 <a href="http://googledrive.com/host/0B84uyZR8WHkjMzhXSzVfbWxENjg/Resume Eddie Wang.pdf">My resume</a>
-				%p I study computer science at Stanford University, and I interned last summer at Intel. I'm well-versed in Java, Javascript, and C, but I'm also comfortable working in C#, C++, and Ruby.
+				%p I study computer science at Stanford University, and I interned last summer at Intel. I'm well-versed in Java, Javascript, and C, and I'm also comfortable working in C#, C++, and Ruby.
 			%section(id="portfolio")
 				-# TODO
 				%h1 Things I've Built
+				%div(class="slideshow")
+					%div(class="slide")
+						%h2 ComBoy
+						%img(src="http://googledrive.com/host/0B84uyZR8WHkjMzhXSzVfbWxENjg/comboy.png")
+						%p An invaluable training tool for extreme martial artists, ComBoy intelligently generates valid move sequences based on the user's desired length and difficulty. Comprehensive settings and tweaks allow users to tailor the generated combinations to their own style or emphasize certain moves and transitions, thereby optimizing their training time. Combos are sserialized as JSON, so users can import, edit, and share their favorites. ComBoy is compatible with Android 1.6+, and the source and .apk are available from <a href="https://github.com/eddiew/ComBoy">my github</a>.
+					%div(class="slide")
+						%h2 Rational Team Concert Query App
+						%img(src="http://googledrive.com/host/0B84uyZR8WHkjMzhXSzVfbWxENjg/RTCQueryApp.png")
+						%p A fellow intern and I wrote this app for our scrum master (manager, basically) at Intel, who wanted a one-click portal to all the important project information. The app's front-end is an excel spreadsheet with some Visual Basic scripting that handles user input and parses the query results into nice looking charts. Its back-end is a java app that runs the specified query and creates a .csv file with the results.
 			%section(id="contact")
 				-# TODO
 				%h1 Get In Touch

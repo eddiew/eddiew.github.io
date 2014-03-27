@@ -29,7 +29,7 @@ $(function() {
 	// Listener to set active nav link
 	_window.scroll(function(event) {
 		// Get section at middle of the window
-		var elem = document.elementFromPoint(221, _window.innerHeight() / 2); // 221 is nav width + 1. TODO: un-fragile this?
+		var elem = document.elementFromPoint(221, _window.innerHeight() / 2); // 221 is nav width + 1. TODO: un-fragile this + mobile support?
 		if (elem.id === curSection.id) return;
 		// Set new active link
 		navLinks[curSection.attr('id')].removeClass('active');

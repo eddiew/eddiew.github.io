@@ -1,24 +1,24 @@
-Crashlog created at 2014-03-21 17:31:05 -0700
+Crashlog created at 2014-03-27 10:46:32 -0700
 
 ===== MESSAGE:
 
-ExecJS::ProgramError: Unexpected token: punc (.) (line: 9, col: 8, pos: 208)
+ExecJS::ProgramError: Unexpected token name «slideshow», expected punc «,» (line: 18, col: 2, pos: 497)
 
 Error
-    at new JS_Parse_Error (C:\Users\Eddie\AppData\Local\Temp\execjs20140321-5332-1lzpt4r.js:2357:10748)
-    at js_error (C:\Users\Eddie\AppData\Local\Temp\execjs20140321-5332-1lzpt4r.js:2357:10967)
-    at croak (C:\Users\Eddie\AppData\Local\Temp\execjs20140321-5332-1lzpt4r.js:2357:19192)
-    at token_error (C:\Users\Eddie\AppData\Local\Temp\execjs20140321-5332-1lzpt4r.js:2357:19329)
-    at unexpected (C:\Users\Eddie\AppData\Local\Temp\execjs20140321-5332-1lzpt4r.js:2357:19417)
-    at semicolon (C:\Users\Eddie\AppData\Local\Temp\execjs20140321-5332-1lzpt4r.js:2357:19890)
-    at C:\Users\Eddie\AppData\Local\Temp\execjs20140321-5332-1lzpt4r.js:2357:21875
-    at C:\Users\Eddie\AppData\Local\Temp\execjs20140321-5332-1lzpt4r.js:2357:20063
-    at block_ (C:\Users\Eddie\AppData\Local\Temp\execjs20140321-5332-1lzpt4r.js:2357:24682)
-    at ctor.body (C:\Users\Eddie\AppData\Local\Temp\execjs20140321-5332-1lzpt4r.js:2357:24316)
+    at new JS_Parse_Error (C:\Users\Eddie\AppData\Local\Temp\execjs20140327-8416-a9xd4a.js:2357:10748)
+    at js_error (C:\Users\Eddie\AppData\Local\Temp\execjs20140327-8416-a9xd4a.js:2357:10967)
+    at croak (C:\Users\Eddie\AppData\Local\Temp\execjs20140327-8416-a9xd4a.js:2357:19192)
+    at token_error (C:\Users\Eddie\AppData\Local\Temp\execjs20140327-8416-a9xd4a.js:2357:19329)
+    at expect_token (C:\Users\Eddie\AppData\Local\Temp\execjs20140327-8416-a9xd4a.js:2357:19552)
+    at expect (C:\Users\Eddie\AppData\Local\Temp\execjs20140327-8416-a9xd4a.js:2357:19690)
+    at expr_list (C:\Users\Eddie\AppData\Local\Temp\execjs20140327-8416-a9xd4a.js:2357:27757)
+    at subscripts (C:\Users\Eddie\AppData\Local\Temp\execjs20140327-8416-a9xd4a.js:2357:29811)
+    at subscripts (C:\Users\Eddie\AppData\Local\Temp\execjs20140327-8416-a9xd4a.js:2357:29447)
+    at subscripts (C:\Users\Eddie\AppData\Local\Temp\execjs20140327-8416-a9xd4a.js:2357:29447)
 
 ===== COMPILATION STACK:
 
-  - [item]   /js/scroll/ (rep default)
+  - [item]   /js/slide/ (rep default)
 
 ===== STACK TRACE:
 
@@ -215,7 +215,7 @@ PROCESSOR_REVISION => "3a09"
 PROMPT => "$P$G"
 PSModulePath => "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\"
 PUBLIC => "C:\\Users\\Public"
-Path => "C:\\Program Files (x86)\\Haskell\\bin;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\lib\\extralibs\\bin;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files (x86)\\Git\\bin;C:\\MinGW\\bin;C:\\Android\\android-studio\\ndk;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\mingw\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Heroku\\bin;C:\\Program Files (x86)\\git\\cmd;C:\\pypy221;C:\\Python27;C:\\Ruby200-x64\\bin;C:\\Users\\Eddie\\AppData\\Roaming\\cabal\\bin;C:\\Users\\Eddie\\AppData\\Roaming\\npm"
+Path => "C:\\Program Files (x86)\\Haskell\\bin;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\lib\\extralibs\\bin;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files (x86)\\Git\\bin;C:\\MinGW\\bin;C:\\Android\\android-studio\\ndk;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\mingw\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Heroku\\bin;C:\\Program Files (x86)\\git\\cmd;C:\\pypy221;C:\\Python27;C:\\Android\\android-studio\\sdk\\platform-tools;C:\\Ruby200-x64\\bin;C:\\Users\\Eddie\\AppData\\Roaming\\cabal\\bin;C:\\Users\\Eddie\\AppData\\Roaming\\npm"
 ProgramData => "C:\\ProgramData"
 ProgramFiles => "C:\\Program Files"
 ProgramFiles(x86) => "C:\\Program Files (x86)"
@@ -241,14 +241,16 @@ windir => "C:\\WINDOWS"
   3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/psych-2.0.2/lib
   4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/colored-1.2/lib
   5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.5.0/lib
-  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/uglifier-2.4.0/lib
-  7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.0.2/lib
-  8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/json-1.8.1/lib
-  9. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0
-  10. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0/x64-msvcrt
-  11. C:/Ruby200-x64/lib/ruby/site_ruby
-  12. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0
-  13. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0/x64-msvcrt
-  14. C:/Ruby200-x64/lib/ruby/vendor_ruby
-  15. C:/Ruby200-x64/lib/ruby/2.0.0
-  16. C:/Ruby200-x64/lib/ruby/2.0.0/x64-mingw32
+  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.13/lib
+  7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/rainpress-1.0/lib
+  8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/uglifier-2.4.0/lib
+  9. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.0.2/lib
+  10. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/json-1.8.1/lib
+  11. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0
+  12. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0/x64-msvcrt
+  13. C:/Ruby200-x64/lib/ruby/site_ruby
+  14. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0
+  15. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0/x64-msvcrt
+  16. C:/Ruby200-x64/lib/ruby/vendor_ruby
+  17. C:/Ruby200-x64/lib/ruby/2.0.0
+  18. C:/Ruby200-x64/lib/ruby/2.0.0/x64-mingw32

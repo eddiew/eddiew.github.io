@@ -70,7 +70,8 @@ body {
 		}
 	}
 
-	nav {
+	#nav {
+		position: fixed;
 		padding: 1rem;
 		background-color: $colorBackground3;
 		z-index: 100;
@@ -90,6 +91,7 @@ body {
 	}
 
 	#main {
+		position: absolute;
 
 		section {
 			width: 100%;
@@ -114,5 +116,62 @@ body {
 				text-align: center;
 			}
 		}
+
+		.slideshow {
+
+			.slide {
+				position: absolute;
+				opacity: 0;
+				text-align: center;
+				@include transition(opacity, 1s, ease-in-out);
+
+				h2 {
+					font-size: 2rem;
+				}
+
+				p {
+					text-align: justify;
+				}
+
+				img {
+					height: 50vw;
+					max-height: 720px;
+					max-width: 100%;
+				}
+
+				&.active {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 540px) {
+	$navWidth: 220px;
+	#nav {
+		width: $navWidth;
+		height: 100vh;
+	}
+
+	#main {
+		width: calc(100% - #{$navWidth});
+		margin-left: $navWidth;
+	}
+}
+
+@media (max-width: 540px) {
+	#nav {
+		width: 100vw;
+		text-align: center;
+		// Make a swipe-able nav?
+	}
+}
+
+.no-js {
+	.slide {
+		position: static;
+		opacity: 1;
+		text-align: left;
 	}
 }

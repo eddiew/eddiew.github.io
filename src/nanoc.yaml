@@ -62,7 +62,7 @@ data_sources:
 debug: false
 
 # Scripts to load in the HTML head
-jsHead: ['styles']
+jsHead: ['js']
 
 # Scripts to load at the end of the HTML body
-jsBody: ['scroll']
+jsBody: ['scroll','slide']
