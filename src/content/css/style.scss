@@ -70,6 +70,10 @@ body {
 		}
 	}
 
+	p {
+		text-align: justify;
+	}
+
 	#nav {
 		position: fixed;
 		padding: 1rem;
@@ -118,28 +122,29 @@ body {
 		}
 
 		.slideshow {
+			position: relative;
 
 			.slide {
 				position: absolute;
-				opacity: 0;
+				top: 0;
 				text-align: center;
+				pointer-events: none;
+				opacity: 0;
 				@include transition(opacity, 1s, ease-in-out);
 
 				h2 {
 					font-size: 2rem;
 				}
 
-				p {
-					text-align: justify;
-				}
-
 				img {
+					// TODO: force aspect
 					height: 50vw;
 					max-height: 720px;
 					max-width: 100%;
 				}
 
 				&.active {
+					pointer-events: auto;
 					opacity: 1;
 				}
 			}
@@ -171,6 +176,7 @@ body {
 .no-js {
 	.slide {
 		position: static;
+		pointer-events: auto;
 		opacity: 1;
 		text-align: left;
 	}

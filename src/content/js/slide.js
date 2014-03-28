@@ -1,20 +1,19 @@
 // TODO: Add controls
 $(function() {
-	// Load slideshows
-	var slideshows = $('.slideshow');
-
-	slideshows.each(function() {
+	$('.slideshow').each(function() {
 		var slideshow = $(this);
-		slideshow.activeSlideIdx = 0;
+		slideshow.activeSlideIdx;
 		slideshow.slides = slideshow.children('.slide');
 		// Set slideshow height to match tallest slide
-		var tallestSlideHeight = 0;
-		slideshow.slides.each(function() {
-			if ($(this).innerHeight() > tallestSlideHeight) tallestSlideHeight = $(this).innerHeight();
+		var tallestSlideHeight = 0,
+			tallestSlideIdx = 0;
+		slideshow.slides.each(function(idx) {
+			if ($(this).innerHeight() > tallestSlideHeight) {
+				tallestSlideHeight = $(this).innerHeight();
+				tallestSlideIdx = idx;
+			}
 		});
-		slideshow.height(tallestSlideHeight);
-		// Activate 1st slide
-		slideshow.slides.eq(slideshow.activeSlideIdx).addClass('active');
+		slideshow.slides.eq(tallestSlideIdx).css('position','static');
 
 		slideshow.slideTo = function(idx) {
 			slideshow.slides.eq(slideshow.activeSlideIdx).removeClass('active');
@@ -31,6 +30,8 @@ $(function() {
 				slideshow.slide();
 			},  5000);
 		}
+		// Activate 1st slide
+		slideshow.slideTo(0);
 
 		slideshow.autoSlide();
 	});
