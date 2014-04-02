@@ -59,10 +59,4 @@ data_sources:
     allow_periods_in_identifiers: true
 
 # if true, don't minify/concatenate CSS/JS
-debug: false
-
-# Scripts to load in the HTML head
-jsHead: ['js']
-
-# Scripts to load at the end of the HTML body
-jsBody: ['scroll','slide']
+debug: true
