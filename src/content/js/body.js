@@ -1,26 +1,20 @@
 $(function() {
 	var _html_body = $('html, body'),
-		_window = $(window),
-		_document = $(document);
-
-	function scrollToElement(element) {
-		return;
-	}
+		_window = $(window);
 
 	// SLIDE
 	// TODO: Add controls
 
-	// s: jQuery object that represents the entire slideshow
-	function Slideshow(s) {
+	function Slideshow(slideshow) {
 		this.activeSlideIdx,
 			this.slideTimerId,
-			this.slides = s.children('.slide');
+			this.slides = slideshow.children('.slide');
 		// Set slideshow height to match tallest slide
 		var tallestSlideHeight = 0,
 			tallestSlideIdx = 0;
-		this.slides.each(function(idx, slide) {
-			if ($(slide).innerHeight() > tallestSlideHeight) {
-				tallestSlideHeight = $(slide).innerHeight();
+		this.slides.each(function(idx) {
+			if ($(this).innerHeight() > tallestSlideHeight) {
+				tallestSlideHeight = $(this).innerHeight();
 				tallestSlideIdx = idx;
 			}
 		});
@@ -52,7 +46,26 @@ $(function() {
 	});
 
 	// SCROLL
-	// TODO: Mobile. maybe put in a separate file?
+
+	function getScrollDuration(distance) {
+		return 500 + distance * 500 / _window.innerHeight();
+	}
+
+	function scrollHome() {
+		_html_body.stop();
+		_html_body.animate({scrollTop: 0}, getScrollDuration(_window.scrollTop()));
+	}
+
+	function scrollTo(target) {
+		_html_body.stop();
+		// Calculate target scroll height
+		var scrollTarget = target.offset().top;
+		if (target.innerHeight() < _window.innerHeight())
+			scrollTarget += target.innerHeight() / 2 - _window.innerHeight() / 2;
+		_html_body.animate({scrollTop: scrollTarget}, getScrollDuration(Math.abs(_window.scrollTop() - scrollTarget)));
+	}
+
+	// TODO: Mobile
 	var curSection,
 		navLinks = (function() {
 			var links = [];
@@ -61,25 +74,23 @@ $(function() {
 					ref = link.attr('href'),
 					target = $(ref);
 				links[ref.substring(1)] = link; // href without the '#'
-				link.click(function(event) {
+				if (ref === "#home") link.click(function(event) {
 					event.preventDefault();
-					_html_body.stop();
-					// Set scroll target to the start or middle of the target section depending on whether fits on screen
-					var scrollTarget = target.offset().top;
-					if (target.innerHeight() < _window.innerHeight())
-						scrollTarget += target.innerHeight() / 2 - _window.innerHeight() / 2;
-					var scrollDuration = 500 + Math.abs(_document.scrollTop() - scrollTarget) * 500 / _window.innerHeight();
-					// TODO: cache html + body?
-					_html_body.animate({scrollTop: scrollTarget}, scrollDuration);
+					scrollHome();
+				});
+				else link.click(function(event) {
+					event.preventDefault();
+					scrollTo(target);
 				});
 			});
 			return links;
 		}());
 
 	// Listener to set active nav link
-	_window.scroll(function(event) {
+	// TODO: un-fragile this + mobile
+	_window.scroll(function() {
 		// Get section at middle of the window
-		var elem = document.elementFromPoint(221, _window.innerHeight() / 2); // 221 is nav width + 1. TODO: un-fragile this + mobile support?
+		var elem = document.elementFromPoint(221, _window.innerHeight() / 2); // 221 is nav width + 1
 		if (elem.id === curSection) return;
 		// Set new active link
 		if (navLinks[curSection] != null) navLinks[curSection].removeClass('active');
@@ -90,25 +101,23 @@ $(function() {
 	// HELLO
 
 	var _home = $('#home'),
-		maxHomeHeight = parseInt(_home.innerHeight(), 10), // counting on this to run before _home's height gets adjusted
-		minHomeHeight = parseInt(_home.css('min-height'), 10);
-
+		_go = $('#go'),
+		_about = $('#about'),
+		homeHeight = parseInt(_home.innerHeight(), 10),
+		minHomeHeight = parseInt(_home.css('min-height'), 10),
+		aboutHeight = homeHeight + parseInt($('about').innerHeight() / 2 - _window.innerHeight() / 2, 10);
+	
 	// Scroll button control
-	$(_home.find('a')).click(function(event) {
+	_go.click(function(event) {
 		event.preventDefault();
-		var target = $('#about');
-		_html_body.stop();
-		// Set scroll target to the start or middle of the target section depending on whether fits on screen
-		var scrollTarget = target.offset().top;
-		if (target.innerHeight() < _window.innerHeight())
-			scrollTarget += target.innerHeight() / 2 - _window.innerHeight() / 2;
-		var scrollDuration = 500 + Math.abs(_document.scrollTop() - scrollTarget) * 500 / _window.innerHeight();
-		// TODO: cache html + body?
-		_html_body.animate({scrollTop: scrollTarget}, scrollDuration);
+		scrollTo(_about);
 	});
 
-	_window.scroll(function() {
-		// if (_document.scrollTop() > maxHomeHeight - minHomeHeight) return;
-		// _home.innerHeight(maxHomeHeight - _document.scrollTop());
+	_window.scroll(function(event) {
+		if (_window.scrollTop() > aboutHeight) _go.addClass('active');
+		else _go.removeClass('active');
+		var shrinkAmt = Math.min(homeHeight - minHomeHeight, _window.scrollTop());
+		_home.css('margin-top', shrinkAmt);
+		_home.innerHeight(homeHeight - shrinkAmt);
 	});
 });

@@ -9,7 +9,8 @@
 		%title Eddie Wang
 		%link(rel="shortcut icon" href="pics/favicon.ico")
 		%link(rel="stylesheet" type="text/css" href="css/style.css")
-		%script(src="js/head.js" type="text/javascript")
+		-# Detect whether JavaScript is enabled
+		%script(type="text/javascript") document.documentElement.className="";
 	%body
 		%nav(id="nav")
 			%header
@@ -26,12 +27,11 @@
 				-# Add a bunch of fade-ins or some other cool shit
 				%div(id="hello")
 					%h1 HELLO.
-					-# TODO: replace this with something more interesting
 					%h2 Welcome to my website.
 				%div(id="hint")
 					%p Scroll down to check me out.
-					%a(href="#about" class="icon-downArrow")
-				-# Show an arrow or something. Parallax scroll/shrink this section?
+					%a(id="go" href="#about" class="icon-downArrow")
+				-# Parallax scroll/shrink this section
 			-# Maybe include blog posts?
 			%section(id="about")
 				-# TODO: finish. Add some sort of graphic?
@@ -41,7 +41,7 @@
 				%p Desktop, mobile, web, or embedded&mdash;you name it, I can do it. 
 				%h2 Learning is my job.
 				-# finish
-				%p And I'm pretty good at it, too. Even if I don't have the experience you're looking for, you can count on my ability to familiarize myself with your project or workflow in record time.
+				%p And I'm pretty good at it, too. Even if I don't have the experience you're looking for, you can count on my ability to familiarize myself with your project and workflow in record time.
 				%h2 <a href="res/Resume Eddie Wang.pdf">My resume</a>
 				%p I study computer science at Stanford University, and I interned last summer at Intel's Data Center Solutions Group. I'm well-versed in Java, Javascript, and C, and I'm also comfortable working in C#, C++, and Ruby.
 			%section(id="portfolio")

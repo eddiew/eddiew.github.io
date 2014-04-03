@@ -4,6 +4,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 
 @import url("//fonts.googleapis.com/css?family=Muli:300");
 
+// Icon font
 @font-face {
   font-family: "icons";
   src: url("/font/icons-eot.eot");
@@ -53,8 +54,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 	transition: $t_name $dur $t_type;
 }
 
-$transitionSpeedMinor: .15s;
+$transitionSpeedMinor: .2s;
+$transitionSpeedMajor: 1s;
 
+// Color theme options: ['light' (default), 'dark']
 $theme: "light";
 
 // Light Theme
@@ -85,6 +88,7 @@ $colorHeading: #232a2f;
 	box-sizing: border-box;
 }
 
+// Actual layout stuff
 html, body {
 	position: absolute;
 	width: 100%;
@@ -106,8 +110,12 @@ body {
 		text-decoration: none;
 		@include transition(color, $transitionSpeedMinor, ease-in-out);
 
-		:hover, :active {
+		:hover, :active, &.active {
 			color: $colorAccentActive;
+		}
+
+		&.active {
+			pointer-events: none;
 		}
 	}
 
@@ -127,10 +135,6 @@ body {
 
 			li {
 				margin: 2rem 0;
-
-				.active {
-					color: $colorAccentActive;
-				}
 			}
 		}
 	}
@@ -141,7 +145,6 @@ body {
 		section {
 			width: 100%;
 			padding: 2rem;
-			min-height: 20rem;
 
 			h1 {
 				font-size: 3rem;
@@ -160,6 +163,7 @@ body {
 			align-items: center;
 			justify-content: center;
 			text-align: center;
+			min-height: 25rem;
 
 			p {
 				text-align: center;
@@ -170,10 +174,15 @@ body {
 				left: 0;
 				right: 0;
 				margin: 0 auto;
-				bottom: 5vh;
+				bottom: 5%;
+				width: 50%; // ugly fix, but whatever
 
 				.icon-downArrow {
 					font-size: 2rem;
+					
+					&.active {
+						color: $colorText;
+					}
 				}
 			}
 		}
@@ -187,7 +196,7 @@ body {
 				text-align: center;
 				pointer-events: none;
 				opacity: 0;
-				@include transition(opacity, 1s, ease-in-out);
+				@include transition(opacity, $transitionSpeedMajor, ease-in-out);
 
 				h2 {
 					font-size: 2rem;
@@ -209,6 +218,7 @@ body {
 	}
 }
 
+// Responsive layout options
 @media (min-width: 540px) {
 	$navWidth: 220px;
 	#nav {
@@ -230,6 +240,7 @@ body {
 	}
 }
 
+// No JavaScript fallback
 .no-js {
 	.slide {
 		position: static;

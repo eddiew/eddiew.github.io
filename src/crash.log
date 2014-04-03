@@ -1,39 +1,27 @@
-Crashlog created at 2014-04-01 21:20:07 -0700
+Crashlog created at 2014-04-02 14:31:46 -0700
 
 ===== MESSAGE:
 
-ExecJS::ProgramError: Unexpected token: punc (.) (line: 13, col: 10, pos: 220)
-
-Error
-    at new JS_Parse_Error (C:\Users\Eddie\AppData\Local\Temp\execjs20140401-176-5qtivv.js:2357:10748)
-    at js_error (C:\Users\Eddie\AppData\Local\Temp\execjs20140401-176-5qtivv.js:2357:10967)
-    at croak (C:\Users\Eddie\AppData\Local\Temp\execjs20140401-176-5qtivv.js:2357:19192)
-    at token_error (C:\Users\Eddie\AppData\Local\Temp\execjs20140401-176-5qtivv.js:2357:19329)
-    at unexpected (C:\Users\Eddie\AppData\Local\Temp\execjs20140401-176-5qtivv.js:2357:19417)
-    at semicolon (C:\Users\Eddie\AppData\Local\Temp\execjs20140401-176-5qtivv.js:2357:19890)
-    at C:\Users\Eddie\AppData\Local\Temp\execjs20140401-176-5qtivv.js:2357:21875
-    at C:\Users\Eddie\AppData\Local\Temp\execjs20140401-176-5qtivv.js:2357:20063
-    at block_ (C:\Users\Eddie\AppData\Local\Temp\execjs20140401-176-5qtivv.js:2357:24682)
-    at ctor.body (C:\Users\Eddie\AppData\Local\Temp\execjs20140401-176-5qtivv.js:2357:24316)
+Haml::SyntaxError: Illegal nesting: nesting within plain text is illegal.
 
 ===== COMPILATION STACK:
 
-  - [item]   /js/body/ (rep default)
+  - [item]   / (rep default)
 
 ===== STACK TRACE:
 
-  0. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.0.2/lib/execjs/external_runtime.rb:68:in `extract_result'
-  1. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.0.2/lib/execjs/external_runtime.rb:28:in `block in exec'
-  2. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.0.2/lib/execjs/external_runtime.rb:41:in `compile_to_tempfile'
-  3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.0.2/lib/execjs/external_runtime.rb:27:in `exec'
-  4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/uglifier-2.4.0/lib/uglifier.rb:184:in `really_compile'
-  5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/uglifier-2.4.0/lib/uglifier.rb:108:in `compile'
-  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.6.7/lib/nanoc/filters/uglify_js.rb:18:in `run'
+  0. item / (rep default):13
+  1. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/haml-4.0.5/lib/haml/parser.rb:255:in `plain'
+  2. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/haml-4.0.5/lib/haml/parser.rb:235:in `process_line'
+  3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/haml-4.0.5/lib/haml/parser.rb:121:in `parse'
+  4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/haml-4.0.5/lib/haml/engine.rb:66:in `initialize'
+  5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.6.7/lib/nanoc/filters/haml.rb:23:in `new'
+  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.6.7/lib/nanoc/filters/haml.rb:23:in `run'
   7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.6.7/lib/nanoc/base/compilation/filter.rb:122:in `setup_and_run'
   8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.6.7/lib/nanoc/base/result_data/item_rep.rb:344:in `filter'
   9. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.6.7/lib/nanoc/base/compilation/item_rep_proxy.rb:47:in `filter'
   10. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.6.7/lib/nanoc/base/compilation/rule_context.rb:55:in `filter'
-  11. ./Rules:31:in `block in load'
+  11. ./Rules:19:in `block in load'
   12. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.6.7/lib/nanoc/base/compilation/rule.rb:68:in `instance_eval'
   13. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.6.7/lib/nanoc/base/compilation/rule.rb:68:in `apply_to'
   14. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.6.7/lib/nanoc/base/compilation/compiler.rb:384:in `compile_rep'
@@ -241,9 +229,9 @@ windir => "C:\\WINDOWS"
   3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/psych-2.0.2/lib
   4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/colored-1.2/lib
   5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.5.0/lib
-  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/uglifier-2.4.0/lib
-  7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.0.2/lib
-  8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/json-1.8.1/lib
+  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/haml-4.0.5/lib
+  7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/erubis-2.7.0/lib
+  8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/tilt-2.0.0/lib
   9. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0
   10. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0/x64-msvcrt
   11. C:/Ruby200-x64/lib/ruby/site_ruby
