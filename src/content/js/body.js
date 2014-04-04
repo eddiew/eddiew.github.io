@@ -48,52 +48,52 @@ $(function() {
 	// SCROLL
 
 	function getScrollDuration(distance) {
-		return 500 + distance * 500 / _window.innerHeight();
+		return 500 + distance * 500 / _window.height();
 	}
 
-	function scrollHome() {
+	function scrollTo(pos) {
 		_html_body.stop();
-		_html_body.animate({scrollTop: 0}, getScrollDuration(_window.scrollTop()));
+		_html_body.animate({scrollTop: pos}, getScrollDuration(Math.abs(_window.scrollTop() - pos)));
 	}
 
-	function scrollTo(target) {
-		_html_body.stop();
+	function scrollToTarget(target) {
 		// Calculate target scroll height
 		var scrollTarget = target.offset().top;
-		if (target.innerHeight() < _window.innerHeight())
-			scrollTarget += target.innerHeight() / 2 - _window.innerHeight() / 2;
-		_html_body.animate({scrollTop: scrollTarget}, getScrollDuration(Math.abs(_window.scrollTop() - scrollTarget)));
+		if (target.innerHeight() < _window.height())
+			scrollTarget += target.innerHeight() / 2 - _window.height() / 2;
+		scrollTo(scrollTarget);
 	}
 
 	// TODO: Mobile
 	var curSection,
-		navLinks = (function() {
-			var links = [];
-			$('#nav').find('a').each(function() {
-				var link = $(this),
-					ref = link.attr('href'),
-					target = $(ref);
-				links[ref.substring(1)] = link; // href without the '#'
-				if (ref === "#home") link.click(function(event) {
-					event.preventDefault();
-					scrollHome();
-				});
-				else link.click(function(event) {
-					event.preventDefault();
-					scrollTo(target);
-				});
+		navLinks = [];
+	$('#nav').find('a').each(function(idx) {
+		var link = $(this),
+			ref = link.attr('href').substring(1), // href without the '#'
+			target = $('#' + ref);
+		if (idx === 0) {
+			curSection = ref;
+			link.addClass('active');
+			link.click(function(event) {
+				event.preventDefault();
+				scrollTo(0);
 			});
-			return links;
-		}());
+		}
+		else link.click(function(event) {
+				event.preventDefault();
+				scrollToTarget(target);
+			});
+		navLinks[ref] = link;
+	});
 
 	// Listener to set active nav link
 	// TODO: un-fragile this + mobile
 	_window.scroll(function() {
 		// Get section at middle of the window
-		var elem = document.elementFromPoint(221, _window.innerHeight() / 2); // 221 is nav width + 1
+		var elem = document.elementFromPoint(221, _window.height() / 2); // 221 is nav width + 1
 		if (elem.id === curSection) return;
 		// Set new active link
-		if (navLinks[curSection] != null) navLinks[curSection].removeClass('active');
+		navLinks[curSection].removeClass('active');
 		curSection = elem.id;
 		navLinks[curSection].addClass('active');
 	});
@@ -105,19 +105,19 @@ $(function() {
 		_about = $('#about'),
 		homeHeight = parseInt(_home.innerHeight(), 10),
 		minHomeHeight = parseInt(_home.css('min-height'), 10),
-		aboutHeight = homeHeight + parseInt($('about').innerHeight() / 2 - _window.innerHeight() / 2, 10);
+		aboutHeight = homeHeight + parseInt($('about').innerHeight() / 2 - _window.height() / 2, 10);
 	
 	// Scroll button control
 	_go.click(function(event) {
 		event.preventDefault();
-		scrollTo(_about);
+		scrollToTarget(_about);
 	});
 
-	_window.scroll(function(event) {
+	_window.scroll(function() {
 		if (_window.scrollTop() > aboutHeight) _go.addClass('active');
 		else _go.removeClass('active');
 		var shrinkAmt = Math.min(homeHeight - minHomeHeight, _window.scrollTop());
-		_home.css('margin-top', shrinkAmt);
 		_home.innerHeight(homeHeight - shrinkAmt);
+		_home.css('margin-top', shrinkAmt);
 	});
 });

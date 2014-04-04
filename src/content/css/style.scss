@@ -179,7 +179,7 @@ body {
 
 				.icon-downArrow {
 					font-size: 2rem;
-					
+
 					&.active {
 						color: $colorText;
 					}
@@ -193,6 +193,7 @@ body {
 			.slide {
 				position: absolute;
 				top: 0;
+				width: 100%; // Required for max-width to work correctly in IE
 				text-align: center;
 				pointer-events: none;
 				opacity: 0;
@@ -203,7 +204,7 @@ body {
 				}
 
 				img {
-					// TODO: force aspect
+					// TODO: force aspect-ratio
 					height: 50vw;
 					max-height: 720px;
 					max-width: 100%;
