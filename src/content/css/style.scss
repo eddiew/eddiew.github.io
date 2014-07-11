@@ -61,17 +61,17 @@ $transitionSpeedMajor: 1s;
 $theme: "light";
 
 // Light Theme
-$colorAccentActive: #000000; // TODO
+$colorAccentActive: #000000;
 $colorAccent: #3498db;
 $colorBackground: #f7f8f9;
 $colorBackground2: #eceff1;
 $colorBackground3: #e5e8eb;
-$colorText: #85939b;
+$colorText: #73838c;
 $colorHeading: #232a2f;
 
 @if $theme == "dark" {
 	// Dark Theme
-	$colorAccentActive: #ffffff; // TODO
+	$colorAccentActive: #ffffff;
 	$colorAccent: #e74c3c;
 	$colorBackground: #282b30;
 	$colorBackground2: #1e2226;
@@ -205,8 +205,7 @@ body {
 
 				img {
 					// TODO: force aspect-ratio
-					height: 50vw;
-					max-height: 720px;
+					max-height: 500px;
 					max-width: 100%;
 				}
 
@@ -249,4 +248,14 @@ body {
 		opacity: 1;
 		text-align: left;
 	}
+}
+
+// Slides
+#helixDemo {
+	display: block;
+	height: 6vw;
+	width: 90%;
+	max-height: 96px;
+	max-width: 1280px;
+	margin: 0 auto;
 }

@@ -3,6 +3,7 @@ var $html_body = $('html, body'),
 	$window = $(window),
 	_slideshows = $('.slideshow').map(function() {return new Slideshow($(this));}).get();
 
+
 // SLIDE
 // TODO: Add controls
 function Slideshow(slideshow) {
@@ -10,6 +11,7 @@ function Slideshow(slideshow) {
 		this.slideTimerId,
 		this.slides = slideshow.children('.slide');
 	// Set slideshow height to match tallest slide
+	// TODO: center slides vertically?
 	var tallestSlideHeight = 0,
 		tallestSlideIdx = 0;
 	this.slides.each(function(idx) {
@@ -44,7 +46,12 @@ function getScrollDuration(distance) {
 }
 function scrollTo(pos) {
 	$html_body.stop();
-	$html_body.animate({scrollTop: pos}, getScrollDuration(Math.abs($window.scrollTop() - pos)));
+	$html_body.bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(){
+		$html_body.stop();
+	});
+	$html_body.animate({scrollTop: pos}, getScrollDuration(Math.abs($window.scrollTop() - pos)), function() {
+		$html_body.unbind("scroll mousedown DOMMouseScroll mousewheel keyup");
+	});
 }
 function scrollToTarget(target) {
 	// Calculate target scroll height
