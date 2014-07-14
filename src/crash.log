@@ -1,137 +1,54 @@
-Crashlog created at 2014-07-11 15:01:48 -0700
+Crashlog created at 2014-07-14 10:01:56 -0700
 
 ===== MESSAGE:
 
-Sass::UnitConversionError: Incompatible units: 'px' and 'vw'.
+Haml::SyntaxError: The line was indented 4 levels deeper than the previous line.
 
 ===== COMPILATION STACK:
 
-  - [item]   /css/style/ (rep default)
+  - [item]   / (rep default)
 
 ===== STACK TRACE:
 
-  0. content/css/style.scss:208
-  1. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/script/value/number.rb:416:in `coercion_factor'
-  2. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/script/value/number.rb:349:in `coerce'
-  3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/script/value/number.rb:397:in `operate'
-  4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/script/value/number.rb:245:in `lt'
-  5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/script/functions.rb:1683:in `block in min'
-  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/script/functions.rb:1683:in `each'
-  7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/script/functions.rb:1683:in `inject'
-  8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/script/functions.rb:1683:in `min'
-  9. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/script/tree/funcall.rb:140:in `_perform'
-  10. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/script/tree/node.rb:50:in `perform'
-  11. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:366:in `visit_prop'
-  12. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-  13. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-  14. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `block in with_base'
-  15. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
-  16. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `with_base'
-  17. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `visit'
-  18. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
-  19. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `map'
-  20. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
-  21. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-  22. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
-  23. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-  24. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-  25. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `block in with_base'
-  26. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
-  27. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `with_base'
-  28. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `visit'
-  29. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
-  30. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `map'
-  31. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
-  32. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-  33. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
-  34. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-  35. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-  36. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `block in with_base'
-  37. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
-  38. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `with_base'
-  39. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `visit'
-  40. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
-  41. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `map'
-  42. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
-  43. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-  44. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
-  45. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-  46. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-  47. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `block in with_base'
-  48. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
-  49. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `with_base'
-  50. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `visit'
-  51. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
-  52. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `map'
-  53. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
-  54. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-  55. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
-  56. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-  57. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-  58. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `block in with_base'
-  59. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
-  60. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `with_base'
-  61. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `visit'
-  62. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
-  63. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `map'
-  64. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
-  65. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-  66. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
-  67. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-  68. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-  69. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `block in with_base'
-  70. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:121:in `with_frame'
-  71. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/stack.rb:79:in `with_base'
-  72. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:152:in `visit'
-  73. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-  74. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:52:in `map'
-  75. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-  76. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
-  77. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-  78. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
-  79. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-  80. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
-  81. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-  82. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:151:in `visit'
-  83. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
-  84. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/root_node.rb:36:in `css_tree'
-  85. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/tree/root_node.rb:20:in `render'
-  86. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib/sass/engine.rb:274:in `render'
-  87. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/filters/sass.rb:20:in `run'
-  88. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/filter.rb:121:in `setup_and_run'
-  89. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/result_data/item_rep.rb:339:in `filter'
-  90. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/item_rep_proxy.rb:47:in `filter'
-  91. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/rule_context.rb:61:in `filter'
-  92. C:/Users/wangeddx/eddiew.github.io/src/Rules:27:in `block in parse'
-  93. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/rule.rb:70:in `instance_eval'
-  94. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/rule.rb:70:in `apply_to'
-  95. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/compiler.rb:386:in `compile_rep'
-  96. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/compiler.rb:342:in `block in compile_reps'
-  97. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/compiler.rb:335:in `loop'
-  98. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/compiler.rb:335:in `compile_reps'
-  99. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/compiler.rb:89:in `run'
-  100. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/source_data/site.rb:59:in `compile'
-  101. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/commands/compile.rb:397:in `block in run'
-  102. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/commands/compile.rb:438:in `run_listeners_while'
-  103. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/commands/compile.rb:396:in `run'
-  104. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/command_runner.rb:14:in `block in call'
-  105. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
-  106. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  107. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/command_runner.rb:13:in `call'
-  108. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command_dsl.rb:223:in `block in runner'
-  109. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
-  110. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
-  111. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
-  112. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/commands/nanoc.rb:39:in `block in define'
-  113. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
-  114. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
-  115. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
-  116. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli.rb:59:in `block in run'
-  117. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
-  118. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  119. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli.rb:57:in `run'
-  120. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/bin/nanoc:24:in `<top (required)>'
-  121. C:/Ruby200-x64/bin/nanoc:23:in `load'
+  0. item / (rep default):82
+  1. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/haml-4.0.5/lib/haml/parser.rb:128:in `parse'
+  2. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/haml-4.0.5/lib/haml/engine.rb:66:in `initialize'
+  3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/filters/haml.rb:23:in `new'
+  4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/filters/haml.rb:23:in `run'
+  5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/filter.rb:121:in `setup_and_run'
+  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/result_data/item_rep.rb:339:in `filter'
+  7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/item_rep_proxy.rb:47:in `filter'
+  8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/rule_context.rb:61:in `filter'
+  9. C:/Users/wangeddx/eddiew.github.io/src/Rules:19:in `block in parse'
+  10. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/rule.rb:70:in `instance_eval'
+  11. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/rule.rb:70:in `apply_to'
+  12. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/compiler.rb:386:in `compile_rep'
+  13. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/compiler.rb:342:in `block in compile_reps'
+  14. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/compiler.rb:335:in `loop'
+  15. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/compiler.rb:335:in `compile_reps'
+  16. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/compilation/compiler.rb:89:in `run'
+  17. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/base/source_data/site.rb:59:in `compile'
+  18. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/commands/compile.rb:397:in `block in run'
+  19. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/commands/compile.rb:438:in `run_listeners_while'
+  20. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/commands/compile.rb:396:in `run'
+  21. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/command_runner.rb:14:in `block in call'
+  22. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
+  23. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  24. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/command_runner.rb:13:in `call'
+  25. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command_dsl.rb:223:in `block in runner'
+  26. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
+  27. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
+  28. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
+  29. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/commands/nanoc.rb:39:in `block in define'
+  30. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
+  31. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
+  32. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
+  33. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli.rb:59:in `block in run'
+  34. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
+  35. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  36. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib/nanoc/cli.rb:57:in `run'
+  37. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/bin/nanoc:24:in `<top (required)>'
+  38. C:/Ruby200-x64/bin/nanoc:23:in `load'
 
 ===== VERSION INFORMATION:
 
@@ -231,12 +148,13 @@ windows_tracing_logfile => "C:\\BVTBin\\Tests\\installpackage\\csilogfile.log"
   1. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/colored-1.2/lib
   2. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib
   3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.1/lib
-  4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.9/lib
-  5. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0
-  6. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0/x64-msvcrt
-  7. C:/Ruby200-x64/lib/ruby/site_ruby
-  8. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0
-  9. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0/x64-msvcrt
-  10. C:/Ruby200-x64/lib/ruby/vendor_ruby
-  11. C:/Ruby200-x64/lib/ruby/2.0.0
-  12. C:/Ruby200-x64/lib/ruby/2.0.0/x64-mingw32
+  4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/tilt-2.0.1/lib
+  5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/haml-4.0.5/lib
+  6. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0
+  7. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0/x64-msvcrt
+  8. C:/Ruby200-x64/lib/ruby/site_ruby
+  9. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0
+  10. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0/x64-msvcrt
+  11. C:/Ruby200-x64/lib/ruby/vendor_ruby
+  12. C:/Ruby200-x64/lib/ruby/2.0.0
+  13. C:/Ruby200-x64/lib/ruby/2.0.0/x64-mingw32

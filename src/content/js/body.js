@@ -1,49 +1,16 @@
+"use strict";
 // Global variables
 var $html_body = $('html, body'),
 	$window = $(window),
-	_slideshows = $('.slideshow').map(function() {return new Slideshow($(this));}).get();
-
-
-// SLIDE
-// TODO: Add controls
-function Slideshow(slideshow) {
-	this.activeSlideIdx = 0,
-		this.slideTimerId,
-		this.slides = slideshow.children('.slide');
-	// Set slideshow height to match tallest slide
-	// TODO: center slides vertically?
-	var tallestSlideHeight = 0,
-		tallestSlideIdx = 0;
-	this.slides.each(function(idx) {
-		if ($(this).innerHeight() > tallestSlideHeight) {
-			tallestSlideHeight = $(this).innerHeight();
-			tallestSlideIdx = idx;
-		}
-	}).
-	eq(tallestSlideIdx).css('position','static');
-	// Activate 1st slide
-	this.slides.eq(0).addClass('active');
-}
-Slideshow.prototype.slideTo = function(idx) {
-	this.slides.eq(this.activeSlideIdx).removeClass('active');
-	this.slides.eq(idx).addClass('active');
-	this.activeSlideIdx = idx;
-};
-Slideshow.prototype.slide = function() {
-	this.slideTo((this.activeSlideIdx+1) % this.slides.length);
-};
-Slideshow.prototype.autoSlide = function() {
-	var slideshow = this;
-	this.slideTimerId = setInterval(function() {
-		slideshow.slide();
-	},  5000);
-};
+	curSection,
+	navLinks = [];
 
 // SCROLL
 // TODO: Mobile
 function getScrollDuration(distance) {
 	return 500 + distance * 500 / $window.height();
 }
+
 function scrollTo(pos) {
 	$html_body.stop();
 	$html_body.bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(){
@@ -53,6 +20,7 @@ function scrollTo(pos) {
 		$html_body.unbind("scroll mousedown DOMMouseScroll mousewheel keyup");
 	});
 }
+
 function scrollToTarget(target) {
 	// Calculate target scroll height
 	var scrollTarget = target.offset().top;
@@ -60,12 +28,11 @@ function scrollToTarget(target) {
 		scrollTarget += target.innerHeight() / 2 - $window.height() / 2;
 	scrollTo(scrollTarget);
 }
-var curSection,
-	navLinks = [];
+
 $('#nav').find('a').each(function(idx) {
 	var link = $(this),
-		ref = link.attr('href').substring(1), // href without the '#'
-		target = $('#' + ref);
+		target = $(link.attr('href')),
+		ref = link.attr('href').substring(1); // href without the '#'
 	if (idx === 0) {
 		curSection = ref;
 		link.addClass('active').
@@ -80,6 +47,7 @@ $('#nav').find('a').each(function(idx) {
 		});
 	navLinks[ref] = link;
 });
+
 // Listener to set active nav link
 // TODO: un-fragile this + mobile
 $window.scroll(function() {
@@ -112,10 +80,4 @@ $window.scroll(function() {
 	var shrinkAmt = Math.min(homeHeight - minHomeHeight, $window.scrollTop());
 	$home.innerHeight(homeHeight - shrinkAmt);
 	$home.css('margin-top', shrinkAmt);
-});
-
-// POST-LOAD WORK
-
-$window.load(function() {
-	_slideshows.forEach(function(slideshow) {slideshow.autoSlide();});
 });

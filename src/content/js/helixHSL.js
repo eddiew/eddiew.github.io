@@ -1,8 +1,8 @@
+"use strict";
 var N_STOPS = 24;
-
 var helixdemo, context, w, h;
 
-$window.load(function() {
+$(function() {
 	helixdemo = document.getElementById('helixDemo');
 	context = helixdemo.getContext('2d');
 	w = helixdemo.width, h = helixdemo.height;
@@ -14,7 +14,12 @@ function redraw() {
 	switch(document.querySelector('input[name="type"]:checked').value) {
 		case "helix":
 			for(var i = 0; i <= N_STOPS; i++) {
-				gradient.addColorStop(i/N_STOPS, (new HelixHSL(i/N_STOPS, 1, 0.5)).toRGB());
+				gradient.addColorStop(i/N_STOPS, (new HelixHSL(i/N_STOPS, 1, 0.5)).toCss());
+			}
+			break;
+		case "const":
+			for(var i = 0; i <= N_STOPS; i++) {
+				gradient.addColorStop(i/N_STOPS, (new ConstHSL(i/N_STOPS, 1, 0.5)).toCss());
 			}
 			break;
 		case "standard":
@@ -27,33 +32,81 @@ function redraw() {
 	context.fillRect(0, 0, w, h);
 }
 
-// takes h, s, l in range 0-1
-// returns RGB representation as Object
-function HelixHSL(h, s, l) {
-	this.h = h, this.s = s, this.l = l;
-	this.r = this.getChannel(h, s, l),
-	this.g = this.getChannel(h - 1/3, s, l),
-	this.b = this.getChannel(h - 2/3, s, l);
+function RGB(r, g, b) {
+	this.r = r, this.g = g, this.b = b;
 }
 
-HelixHSL.prototype.getChannel = function(h, s, l) {
-	return Math.round(255 * (Math.cos(h * 2 * Math.PI) * Math.min(l, Math.min(s / 2, 1-l)) + l));
-};
+function HelixHSL(h, s, l) {
+	this.r = getHelixChannel(h, s, l),
+	this.g = getHelixChannel(h - 1/3, s, l),
+	this.b = getHelixChannel(h - 2/3, s, l);
+}
 
-HelixHSL.prototype.hexFromChannel = function(num) {
+HelixHSL.prototype = RGB.prototype;
+
+function ConstHSL(h, s, l) {
+	var sector = Math.round(h * 6);
+	var offset = h * 6 - sector;
+	var r, g, b;
+	switch (sector % 6) {
+		case 0: // Red
+			r = 1;
+			g = offset-0.5;
+			b = -offset-0.5;
+			break;
+		case 1: // Yellow
+			r = -offset+0.5;
+			g = offset+0.5;
+			b = -1;
+			break;
+		case 2: // Green
+			r = -offset-0.5;
+			g = 1;
+			b = offset-0.5;
+			break;
+		case 3: // Cyan
+			r = -1;
+			g = -offset+0.5;
+			b = offset+0.5;
+			break;
+		case 4: // Blue
+			r = offset-0.5;
+			g = -offset-0.5;
+			b = 1;
+			break;
+		case 5: // Magenta
+			r = offset+0.5;
+			g = -1;
+			b = -offset+0.5;
+			break;
+	}
+	this.r = applySL(r, s, l);
+	this.g = applySL(g, s, l);
+	this.b = applySL(b, s, l);
+}
+
+function getHelixChannel(h, s, l) {
+	return applySL(Math.cos(h * 2 * Math.PI), s, l);
+}
+
+function hexFromChannel(num) {
 	if (num > 0xFF) return 'FF';
-	else if (num > 0xF) return num.toString(16);
-	else if (num > 0) return '0' + num.toString(16);
+	else if (num > 0xF) return Math.round(num).toString(16);
+	else if (num > 0) return '0' + Math.round(num).toString(16);
 	else return '00';
+}
+
+RGB.prototype.toHex = function() {
+	return '#' + hexFromChannel(this.r) + hexFromChannel(this.g) + hexFromChannel(this.b);
 };
 
-HelixHSL.prototype.toHex = function() {
-	return '#' + this.hexFromChannel(this.r) + this.hexFromChannel(this.g) + this.hexFromChannel(this.b);
+RGB.prototype.toCss = function() {
+    return 'rgb(' + Math.round(this.r).toString() + ',' + Math.round(this.g).toString() + ',' + Math.round(this.b).toString() + ')';
 };
 
-HelixHSL.prototype.toRGB = function() {
-    return 'rgb(' + this.r + ',' + this.g + ',' + this.b + ')';
-};
+function applySL(channel, s, l) {
+	return 255 * (channel * Math.min(l, Math.min(s / 2, 1-l)) + l);
+}
 
 /**
  * Converts an HSL color value to RGB. Conversion formula
