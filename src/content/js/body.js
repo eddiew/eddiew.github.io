@@ -75,8 +75,8 @@ $go.click(function(event) {
 });
 
 $window.scroll(function() {
-	if ($window.scrollTop() > aboutHeight) $go.addClass('active');
-	else $go.removeClass('active');
+	if ($window.scrollTop() > aboutHeight) $go.addClass('inactive');
+	else $go.removeClass('inactive');
 	var shrinkAmt = Math.min(homeHeight - minHomeHeight, $window.scrollTop());
 	$home.innerHeight(homeHeight - shrinkAmt);
 	$home.css('margin-top', shrinkAmt);

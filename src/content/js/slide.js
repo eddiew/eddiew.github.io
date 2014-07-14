@@ -22,21 +22,24 @@ function Slideshow(slideshow) {
 		}
 	}).
 	eq(tallestSlideIdx).css('position','static');
-	// // Set up nav dots
-	// this.navDots.each(function(idx) {
-	// 	$(this).on('click', function(e){
-	// 		clearInterval(self.slideTimerId);
-	// 		self.slideTo(idx);
-	// 		self.autoSlide();
-	// 	}); // TODO reset autoslide
-	// });
+	// Set up nav dots
+	this.navDots.each(function(idx) {
+		$(this).on('click', function(e){
+			clearInterval(self.slideTimerId);
+			self.slideTo(idx);
+			self.autoSlide();
+		});
+	});
 	// Activate 1st slide
 	this.slides.eq(0).addClass('active');
+	this.navDots.eq(0).addClass('active');
 	this.autoSlide();
 }
 Slideshow.prototype.slideTo = function(idx) {
 	this.slides.eq(this.activeSlideIdx).removeClass('active');
+	this.navDots.eq(this.activeSlideIdx).removeClass('active');
 	this.slides.eq(idx).addClass('active');
+	this.navDots.eq(idx).addClass('active');
 	this.activeSlideIdx = idx;
 };
 Slideshow.prototype.slide = function() {

@@ -77,8 +77,11 @@ $colorHeading: #232a2f;
 	$colorBackground2: #1e2226;
 	$colorBackground3: #1a1e22;
 	$colorText: #85939b;
-	$colorHeading: #ffffff;
+	$colorHeading: #d0d7dc;
 }
+
+$phi: 1.618;
+$phifrac: 0.618;
 
 * {
 	-moz-box-sizing: border-box;
@@ -180,7 +183,7 @@ body {
 				.icon-downArrow {
 					font-size: 2rem;
 
-					&.active {
+					&.inactive {
 						color: $colorText;
 					}
 				}
@@ -215,8 +218,30 @@ body {
 				}
 			}
 
-			.slidenav li {
-				display: inline-block;
+			.slidenav {
+				list-style: none;
+				text-align: center;
+				padding: 0;
+
+				li {
+					display: inline-block;
+					width: 1rem;
+					height: 1rem;
+					margin: 0 0.618rem;
+					border-radius: 50%;
+					background: $colorText;
+					@include transition(background, $transitionSpeedMinor, ease-in-out);
+
+					&.active {
+						background: $colorHeading;
+					}
+
+					&:hover {
+						background: $colorAccentActive;
+						cursor: hand;
+						cursor: pointer;
+					}
+				}
 			}
 		}
 	}

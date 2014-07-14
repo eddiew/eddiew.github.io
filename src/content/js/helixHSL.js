@@ -85,6 +85,8 @@ function ConstHSL(h, s, l) {
 	this.b = applySL(b, s, l);
 }
 
+ConstHSL.prototype = RGB.prototype;
+
 function getHelixChannel(h, s, l) {
 	return applySL(Math.cos(h * 2 * Math.PI), s, l);
 }
