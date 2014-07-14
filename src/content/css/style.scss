@@ -185,6 +185,7 @@ body {
 
 					&.inactive {
 						color: $colorText;
+						pointer-events: none;
 					}
 				}
 			}
@@ -192,17 +193,20 @@ body {
 
 		.slideshow {
 			position: relative;
+			background: $colorBackground3;
+			padding: 1rem 0;
 
 			.slide {
 				position: absolute;
-				top: 0;
-				width: 100%; // Required for max-width to work correctly in IE
+				margin: 0 1.618rem;
+				//width: 100%; // Required for max-width to work correctly in IE
 				text-align: center;
 				pointer-events: none;
 				opacity: 0;
 				@include transition(opacity, $transitionSpeedMajor, ease-in-out);
 
-				h2 {
+				.title {
+					margin-top: 0.618rem;
 					font-size: 2rem;
 				}
 
@@ -222,6 +226,7 @@ body {
 				list-style: none;
 				text-align: center;
 				padding: 0;
+				margin-bottom: 0;
 
 				li {
 					display: inline-block;
@@ -234,6 +239,7 @@ body {
 
 					&.active {
 						background: $colorHeading;
+						pointer-events: none;
 					}
 
 					&:hover {

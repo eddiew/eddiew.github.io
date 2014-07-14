@@ -17,9 +17,9 @@ function redraw() {
 				gradient.addColorStop(i/N_STOPS, (new HelixHSL(i/N_STOPS, 1, 0.5)).toCss());
 			}
 			break;
-		case "const":
+		case "saturated":
 			for(var i = 0; i <= N_STOPS; i++) {
-				gradient.addColorStop(i/N_STOPS, (new ConstHSL(i/N_STOPS, 1, 0.5)).toCss());
+				gradient.addColorStop(i/N_STOPS, (new HelixHSLSaturated(i/N_STOPS, 1, 0.5)).toCss());
 			}
 			break;
 		case "standard":
@@ -87,8 +87,34 @@ function ConstHSL(h, s, l) {
 
 ConstHSL.prototype = RGB.prototype;
 
+function HelixHSLSaturated(h, s, l) {
+	this.r = getSatHelixChannel(h, s, l),
+	this.g = getSatHelixChannel(h - 1/3, s, l),
+	this.b = getSatHelixChannel(h - 2/3, s, l);
+}
+
+HelixHSLSaturated.prototype = RGB.prototype;
+
 function getHelixChannel(h, s, l) {
 	return applySL(Math.cos(h * 2 * Math.PI), s, l);
+}
+
+function getSatHelixChannel(h, s, l) {
+	var hmod = h - Math.floor(h);
+	var channel = 1;
+	if (hmod > 11/12) {
+		// channel = 1;
+	}
+	else if (hmod > 7/12) {
+		channel = Math.sin((hmod-9/12)*3*Math.PI);
+	}
+	else if (hmod > 5/12) {
+		channel = -1;
+	}
+	else if (hmod > 1/12) {
+		channel = Math.cos((hmod-1/12)*3*Math.PI);
+	}
+	return applySL(channel, s, l);
 }
 
 function hexFromChannel(num) {

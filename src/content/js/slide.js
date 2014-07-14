@@ -4,7 +4,7 @@ $(function() {
 });
 
 // SLIDE
-// TODO: Add controls
+// TODO: Add play/pause controls
 function Slideshow(slideshow) {
 	var self = this;
 	this.activeSlideIdx = 0,
@@ -22,6 +22,9 @@ function Slideshow(slideshow) {
 		}
 	}).
 	eq(tallestSlideIdx).css('position','static');
+	this.slides.each(function() {
+		$(this).css('top', tallestSlideHeight / 2 - $(this).innerHeight() / 2);
+	});
 	// Set up nav dots
 	this.navDots.each(function(idx) {
 		$(this).on('click', function(e){
@@ -35,6 +38,7 @@ function Slideshow(slideshow) {
 	this.navDots.eq(0).addClass('active');
 	this.autoSlide();
 }
+
 Slideshow.prototype.slideTo = function(idx) {
 	this.slides.eq(this.activeSlideIdx).removeClass('active');
 	this.navDots.eq(this.activeSlideIdx).removeClass('active');
@@ -42,9 +46,11 @@ Slideshow.prototype.slideTo = function(idx) {
 	this.navDots.eq(idx).addClass('active');
 	this.activeSlideIdx = idx;
 };
+
 Slideshow.prototype.slide = function() {
 	this.slideTo((this.activeSlideIdx+1) % this.slides.length);
 };
+
 Slideshow.prototype.autoSlide = function() {
 	var slideshow = this;
 	this.slideTimerId = setInterval(function() {
