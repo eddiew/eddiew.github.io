@@ -59,4 +59,8 @@ data_sources:
     allow_periods_in_identifiers: true
 
 # if true, don't minify/concatenate CSS/JS
-debug: true
+debug: false
+
+css: ['normalize', 'main', 'nouislider']
+
+js: ['body','slide','helixHSL','nouislider']

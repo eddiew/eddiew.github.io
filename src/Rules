@@ -26,6 +26,8 @@ compile '*' do
     when 'scss'
       filter :sass, syntax: :scss
       filter :rainpress # unless @config[:debug]
+    when 'css'
+      filter :rainpress
     when 'js'
     # filter :jslint if @config[:debug]
       filter :uglify_js unless @config[:debug]

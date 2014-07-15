@@ -1,0 +1,292 @@
+@charset 'UTF-8';
+
+// Icon font
+@font-face {
+  font-family: "icons";
+  src: url("/font/icons-eot.eot");
+  src: url("/font/icons-eot.eot?#iefix") format("embedded-opentype"),
+    url("/font/icons-woff.woff") format("woff"),
+    url("/font/icons-ttf.ttf") format("truetype"),
+    url("/font/icons-svg.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  font-family: "icons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-downArrow:before {
+  content: "d";
+}
+
+@mixin transition ($t_name, $dur, $t_type) {
+	-webkit-transition: $t_name $dur $t_type;
+	-moz-transition: $t_name $dur $t_type;
+	-ms-transition: $t_name $dur $t_type;
+	-o-transition: $t_name $dur $t_type;
+	transition: $t_name $dur $t_type;
+}
+
+$transitionSpeedMinor: .2s;
+$transitionSpeedMajor: 1s;
+
+// Color theme options: ['light' (default), 'dark']
+$theme: "light";
+
+// Light Theme
+$colorAccentActive: #000000;
+$colorAccent: #3498db;
+$colorBackground: #f7f8f9;
+$colorBackground2: #eceff1;
+$colorBackground3: #e5e8eb;
+$colorText: #73838c;
+$colorHeading: #232a2f;
+
+@if $theme == "dark" {
+	// Dark Theme
+	$colorAccentActive: #ffffff;
+	$colorAccent: #e74c3c;
+	$colorBackground: #282b30;
+	$colorBackground2: #1e2226;
+	$colorBackground3: #1a1e22;
+	$colorText: #85939b;
+	$colorHeading: #d0d7dc;
+}
+
+$phiRems: 1.618rem;
+$phiFracRems: 0.618rem;
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// Actual layout stuff
+html, body {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: $colorBackground;
+	color: $colorText;
+	font-family: 'Muli';
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $colorHeading;
+		font-weight: 300;
+	}
+
+	a {
+		color: $colorAccent;
+		text-decoration: none;
+		@include transition(color, $transitionSpeedMinor, ease-in-out);
+
+		:hover, :active, &.active {
+			color: $colorAccentActive;
+		}
+
+		&.active {
+			pointer-events: none;
+		}
+	}
+
+	p {
+		text-align: justify;
+	}
+
+	#nav {
+		position: fixed;
+		padding: 1rem;
+		background-color: $colorBackground3;
+		z-index: 100;
+
+		ul {
+			list-style: none;
+			padding-left: 1rem;
+
+			li {
+				margin: 2rem 0;
+			}
+		}
+	}
+
+	#main {
+		position: absolute;
+
+		section {
+			width: 100%;
+			padding: 2rem;
+
+			h1 {
+				font-size: 3rem;
+			}
+		}
+
+		section:nth-of-type(odd) {
+			background-color: $colorBackground2;
+		}
+
+		#home {
+			height: 100vh;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			min-height: 25rem;
+
+			p {
+				text-align: center;
+			}
+
+			#hint {
+				position: absolute;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				bottom: 5%;
+				width: 50%; // ugly fix, but whatever
+
+				.icon-downArrow {
+					font-size: 2rem;
+
+					&.inactive {
+						color: $colorText;
+						pointer-events: none;
+					}
+				}
+			}
+		}
+
+		.slideshow {
+			position: relative;
+			background: $colorBackground3;
+			padding: 1rem 0;
+
+			.slide {
+				position: absolute;
+				margin: 0 1.618rem;
+				//width: 100%; // Required for max-width to work correctly in IE
+				text-align: center;
+				pointer-events: none;
+				opacity: 0;
+				@include transition(opacity, $transitionSpeedMajor, ease-in-out);
+
+				h2 {
+					margin-top: 0.618rem;
+					font-size: 2rem;
+				}
+
+				img {
+					// TODO: force aspect-ratio
+					max-height: 500px;
+					max-width: 100%;
+				}
+
+				&.active {
+					pointer-events: auto;
+					opacity: 1;
+				}
+			}
+
+			.slidenav {
+				list-style: none;
+				text-align: center;
+				padding: 0;
+				margin-bottom: 0;
+
+				li {
+					display: inline-block;
+					width: 1rem;
+					height: 1rem;
+					margin: 0 0.618rem;
+					border-radius: 50%;
+					background: $colorText;
+					@include transition(background, $transitionSpeedMinor, ease-in-out);
+
+					&.active {
+						background: $colorHeading;
+						pointer-events: none;
+					}
+
+					&:hover {
+						background: $colorAccentActive;
+						cursor: hand;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Responsive layout options
+@media (min-width: 540px) {
+	$navWidth: 220px;
+	#nav {
+		width: $navWidth;
+		height: 100vh;
+	}
+
+	#main {
+		width: calc(100% - #{$navWidth});
+		margin-left: $navWidth;
+	}
+}
+
+@media (max-width: 540px) {
+	#nav {
+		width: 100vw;
+		text-align: center;
+		// Make a swipe-able nav?
+	}
+}
+
+// No JavaScript fallback
+.no-js {
+	.slide {
+		position: static;
+		pointer-events: auto;
+		opacity: 1;
+		text-align: left;
+	}
+}
+
+// Slides
+#helixDemo {
+	display: block;
+	height: 6vw;
+	width: 90%;
+	max-height: 96px;
+	max-width: 1280px;
+	margin: 0 auto;
+}

@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem 'adsf'
+gem 'haml'
+gem 'nanoc'
+gem 'rack'
+gem 'rainpress'
+gem 'rake'
+gem 'sass'
+gem 'uglifier'
