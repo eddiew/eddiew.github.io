@@ -186,66 +186,6 @@ body {
 				}
 			}
 		}
-
-		.slideshow {
-			position: relative;
-			background: $colorBackground3;
-			padding: 1rem 0;
-
-			.slide {
-				position: absolute;
-				margin: 0 1.618rem;
-				//width: 100%; // Required for max-width to work correctly in IE
-				text-align: center;
-				pointer-events: none;
-				opacity: 0;
-				@include transition(opacity, $transitionSpeedMajor, ease-in-out);
-
-				h2 {
-					margin-top: 0.618rem;
-					font-size: 2rem;
-				}
-
-				img {
-					// TODO: force aspect-ratio
-					max-height: 500px;
-					max-width: 100%;
-				}
-
-				&.active {
-					pointer-events: auto;
-					opacity: 1;
-				}
-			}
-
-			.slidenav {
-				list-style: none;
-				text-align: center;
-				padding: 0;
-				margin-bottom: 0;
-
-				li {
-					display: inline-block;
-					width: 1rem;
-					height: 1rem;
-					margin: 0 0.618rem;
-					border-radius: 50%;
-					background: $colorText;
-					@include transition(background, $transitionSpeedMinor, ease-in-out);
-
-					&.active {
-						background: $colorHeading;
-						pointer-events: none;
-					}
-
-					&:hover {
-						background: $colorAccentActive;
-						cursor: hand;
-						cursor: pointer;
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -268,16 +208,6 @@ body {
 		width: 100vw;
 		text-align: center;
 		// Make a swipe-able nav?
-	}
-}
-
-// No JavaScript fallback
-.no-js {
-	.slide {
-		position: static;
-		pointer-events: auto;
-		opacity: 1;
-		text-align: left;
 	}
 }
 

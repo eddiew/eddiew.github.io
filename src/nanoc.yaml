@@ -61,6 +61,6 @@ data_sources:
 # if true, don't minify/concatenate CSS/JS
 debug: false
 
-css: ['normalize', 'main', 'nouislider']
+css: ['normalize', 'main', 'slides']
 
-js: ['body','slide','helixHSL','nouislider']
+js: ['body','slides','helixHSL']
