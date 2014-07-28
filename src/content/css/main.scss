@@ -128,7 +128,7 @@ body {
 		background-color: $colorBackground3;
 		z-index: 100;
 
-		ul {
+		#navlist {
 			list-style: none;
 			padding-left: 1rem;
 
@@ -136,6 +136,8 @@ body {
 				margin: 2rem 0;
 			}
 		}
+
+		
 	}
 
 	#main {
