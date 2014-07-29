@@ -41,6 +41,15 @@
 .icon-downArrow:before {
   content: "d";
 }
+.icon-email:before {
+  content: "m";
+}
+.icon-github:before {
+  content: "g";
+}
+.icon-linkedin:before {
+  content: "l";
+}
 
 @mixin transition ($t_name, $dur, $t_type) {
 	-webkit-transition: $t_name $dur $t_type;
@@ -133,11 +142,26 @@ body {
 			padding-left: 1rem;
 
 			li {
-				margin: 2rem 0;
+				margin: $phiRems 0;
 			}
 		}
 
-		
+		#linkList {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			list-style: none;
+			padding: 0;
+			margin: 0 auto;
+			text-align: center;
+
+			li {
+				font-size: 2rem;
+				display: inline-block;
+				margin: 1rem $phiFracRems;
+			}
+		}
 	}
 
 	#main {
@@ -178,7 +202,7 @@ body {
 				bottom: 5%;
 				width: 50%; // ugly fix, but whatever
 
-				.icon-downArrow {
+				#go {
 					font-size: 2rem;
 
 					&.inactive {

@@ -59,7 +59,7 @@ data_sources:
     allow_periods_in_identifiers: true
 
 # if true, don't minify/concatenate CSS/JS
-debug: false
+debug: true
 
 css: ['normalize', 'main', 'slides']
 
