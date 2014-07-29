@@ -1,1 +1,182 @@
-"use strict";function redraw(){var t=context.createLinearGradient(0,0,w,0);switch(document.querySelector('input[name="type"]:checked').value){case"helix":for(var e=0;N_STOPS>=e;e++)t.addColorStop(e/N_STOPS,new HelixHSL(e/N_STOPS,1,.5).toCss());break;case"saturated":for(var e=0;N_STOPS>=e;e++)t.addColorStop(e/N_STOPS,new HelixHSLSaturated(e/N_STOPS,1,.5).toCss());break;case"standard":for(var e=0;N_STOPS>=e;e++)t.addColorStop(e/N_STOPS,rgbToString(hslToRgb(e/N_STOPS,1,.5)))}context.fillStyle=t,context.fillRect(0,0,w,h)}function RGB(t,e,n){this.r=t,this.g=e,this.b=n}function HelixHSL(t,e,n){this.r=getHelixChannel(t,e,n),this.g=getHelixChannel(t-1/3,e,n),this.b=getHelixChannel(t-2/3,e,n)}function ConstHSL(t,e,n){var r,o,a,i=Math.round(6*t),h=6*t-i;switch(i%6){case 0:r=1,o=h-.5,a=-h-.5;break;case 1:r=-h+.5,o=h+.5,a=-1;break;case 2:r=-h-.5,o=1,a=h-.5;break;case 3:r=-1,o=-h+.5,a=h+.5;break;case 4:r=h-.5,o=-h-.5,a=1;break;case 5:r=h+.5,o=-1,a=-h+.5}this.r=applySL(r,e,n),this.g=applySL(o,e,n),this.b=applySL(a,e,n)}function HelixHSLSaturated(t,e,n){this.r=getSatHelixChannel(t,e,n),this.g=getSatHelixChannel(t-1/3,e,n),this.b=getSatHelixChannel(t-2/3,e,n)}function getHelixChannel(t,e,n){return applySL(Math.cos(2*t*Math.PI),e,n)}function getSatHelixChannel(t,e,n){var r=t-Math.floor(t),o=1;return r>11/12||(r>7/12?o=Math.sin(3*(r-.75)*Math.PI):r>5/12?o=-1:r>1/12&&(o=Math.cos(3*(r-1/12)*Math.PI))),applySL(o,e,n)}function hexFromChannel(t){return t>255?"FF":t>15?Math.round(t).toString(16):t>0?"0"+Math.round(t).toString(16):"00"}function applySL(t,e,n){return 255*(t*Math.min(n,Math.min(e/2,1-n))+n)}function hslToRgb(t,e,n){var r,o,a;if(0==e)r=o=a=n;else{var i=.5>n?n*(1+e):n+e-n*e,h=2*n-i;r=hue2Rgb(h,i,t+1/3),o=hue2Rgb(h,i,t),a=hue2Rgb(h,i,t-1/3)}return{r:Math.round(255*r),g:Math.round(255*o),b:Math.round(255*a)}}function hue2Rgb(t,e,n){return 0>n&&(n+=1),n>1&&(n-=1),1/6>n?t+6*(e-t)*n:.5>n?e:2/3>n?t+(e-t)*(2/3-n)*6:t}function rgbToString(t){return"rgb("+t.r+","+t.g+","+t.b+")"}var N_STOPS=24,helixdemo,context,w,h;$(function(){helixdemo=document.getElementById("helixDemo"),context=helixdemo.getContext("2d"),w=helixdemo.width,h=helixdemo.height,redraw()}),HelixHSL.prototype=RGB.prototype,ConstHSL.prototype=RGB.prototype,HelixHSLSaturated.prototype=RGB.prototype,RGB.prototype.toHex=function(){return"#"+hexFromChannel(this.r)+hexFromChannel(this.g)+hexFromChannel(this.b)},RGB.prototype.toCss=function(){return"rgb("+Math.round(this.r).toString()+","+Math.round(this.g).toString()+","+Math.round(this.b).toString()+")"};
+"use strict";
+var N_STOPS = 24;
+var helixdemo, context, w, h;
+
+$(function() {
+	helixdemo = document.getElementById('helixDemo');
+	context = helixdemo.getContext('2d');
+	w = helixdemo.width, h = helixdemo.height;
+	redraw();
+});
+
+function redraw() {
+	var gradient = context.createLinearGradient(0, 0, w, 0);
+	switch(document.querySelector('input[name="type"]:checked').value) {
+		case "helix":
+			for(var i = 0; i <= N_STOPS; i++) {
+				gradient.addColorStop(i/N_STOPS, (new HelixHSL(i/N_STOPS, 1, 0.5)).toCss());
+			}
+			break;
+		case "saturated":
+			for(var i = 0; i <= N_STOPS; i++) {
+				gradient.addColorStop(i/N_STOPS, (new HelixHSLSaturated(i/N_STOPS, 1, 0.5)).toCss());
+			}
+			break;
+		case "standard":
+			for(var i = 0; i <= N_STOPS; i++) {
+				gradient.addColorStop(i/N_STOPS, rgbToString(hslToRgb(i/N_STOPS, 1, 0.5)));
+			}
+			break;
+	}
+	context.fillStyle = gradient;
+	context.fillRect(0, 0, w, h);
+}
+
+function RGB(r, g, b) {
+	this.r = r, this.g = g, this.b = b;
+}
+
+function HelixHSL(h, s, l) {
+	this.r = getHelixChannel(h, s, l),
+	this.g = getHelixChannel(h - 1/3, s, l),
+	this.b = getHelixChannel(h - 2/3, s, l);
+}
+
+HelixHSL.prototype = RGB.prototype;
+
+function ConstHSL(h, s, l) {
+	var sector = Math.round(h * 6);
+	var offset = h * 6 - sector;
+	var r, g, b;
+	switch (sector % 6) {
+		case 0: // Red
+			r = 1;
+			g = offset-0.5;
+			b = -offset-0.5;
+			break;
+		case 1: // Yellow
+			r = -offset+0.5;
+			g = offset+0.5;
+			b = -1;
+			break;
+		case 2: // Green
+			r = -offset-0.5;
+			g = 1;
+			b = offset-0.5;
+			break;
+		case 3: // Cyan
+			r = -1;
+			g = -offset+0.5;
+			b = offset+0.5;
+			break;
+		case 4: // Blue
+			r = offset-0.5;
+			g = -offset-0.5;
+			b = 1;
+			break;
+		case 5: // Magenta
+			r = offset+0.5;
+			g = -1;
+			b = -offset+0.5;
+			break;
+	}
+	this.r = applySL(r, s, l);
+	this.g = applySL(g, s, l);
+	this.b = applySL(b, s, l);
+}
+
+ConstHSL.prototype = RGB.prototype;
+
+function HelixHSLSaturated(h, s, l) {
+	this.r = getSatHelixChannel(h, s, l),
+	this.g = getSatHelixChannel(h - 1/3, s, l),
+	this.b = getSatHelixChannel(h - 2/3, s, l);
+}
+
+HelixHSLSaturated.prototype = RGB.prototype;
+
+function getHelixChannel(h, s, l) {
+	return applySL(Math.cos(h * 2 * Math.PI), s, l);
+}
+
+function getSatHelixChannel(h, s, l) {
+	var hmod = h - Math.floor(h);
+	var channel = 1;
+	if (hmod > 11/12) {
+		// channel = 1;
+	}
+	else if (hmod > 7/12) {
+		channel = Math.sin((hmod-9/12)*3*Math.PI);
+	}
+	else if (hmod > 5/12) {
+		channel = -1;
+	}
+	else if (hmod > 1/12) {
+		channel = Math.cos((hmod-1/12)*3*Math.PI);
+	}
+	return applySL(channel, s, l);
+}
+
+function hexFromChannel(num) {
+	if (num > 0xFF) return 'FF';
+	else if (num > 0xF) return Math.round(num).toString(16);
+	else if (num > 0) return '0' + Math.round(num).toString(16);
+	else return '00';
+}
+
+RGB.prototype.toHex = function() {
+	return '#' + hexFromChannel(this.r) + hexFromChannel(this.g) + hexFromChannel(this.b);
+};
+
+RGB.prototype.toCss = function() {
+    return 'rgb(' + Math.round(this.r).toString() + ',' + Math.round(this.g).toString() + ',' + Math.round(this.b).toString() + ')';
+};
+
+function applySL(channel, s, l) {
+	return 255 * (channel * Math.min(l, Math.min(s / 2, 1-l)) + l);
+}
+
+/**
+ * Converts an HSL color value to RGB. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes h, s, and l are contained in the set [0, 1] and
+ * returns r, g, and b in the set [0, 255].
+ *
+ * @param   Number  h       The hue
+ * @param   Number  s       The saturation
+ * @param   Number  l       The lightness
+ * @return  Object          The RGB representation as an object
+ */
+function hslToRgb(h, s, l) {
+    var r, g, b;
+
+    if (s == 0) {
+        r = g = b = l; // achromatic
+    } else {
+
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+        r = hue2Rgb(p, q, h + 1 / 3);
+        g = hue2Rgb(p, q, h);
+        b = hue2Rgb(p, q, h - 1 / 3);
+    }
+
+    return {
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255)
+    }
+}
+
+function hue2Rgb(p, q, t) {
+    if (t < 0) t += 1;
+    if (t > 1) t -= 1;
+    if (t < 1 / 6) return p + (q - p) * 6 * t;
+    if (t < 1 / 2) return q;
+    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+    return p;
+}
+
+function rgbToString(rgb) {
+    return 'rgb(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ')';
+}

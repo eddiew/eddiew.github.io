@@ -470,8 +470,7 @@ FileETag None
 
   # JavaScript
     ExpiresByType application/javascript                "access plus 1 year"
-    ExpiresByType text/javascript                "access plus 1 year"
-
+    ExpiresByType text/javascript                       "access plus 1 year"
 
   # Manifest files
     ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"

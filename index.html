@@ -1,93 +1,103 @@
 <!DOCTYPE html>
 <html class='no-js' lang='en'>
-<head>
-<meta charset='utf-8'>
-<meta content='width=device-width, initial-scale=1.0' name='viewport'>
-<meta content='text/html; charset=utf-8' http-equiv='content-type'>
-<meta content="Eddie Wang's Portfolio Website" name='description'>
-<meta content='Eddie Wang' name='keywords'>
-<title>Eddie Wang</title>
-<link href='pic/favicon.ico' rel='shortcut icon'>
-<link href='http://fonts.googleapis.com/css?family=Muli:300' rel='stylesheet'>
-<link rel="stylesheet" href="css/all-cb213ae825c.css">
-<script>document.documentElement.className="";</script>
-</head>
-<!-- Erase those doubts; This website is my work only. -->
-<body>
-<nav id='nav'>
-<header>
-<h1>Eddie Wang</h1>
-<p>eddiew@stanford.edu</p>
-</header>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-<main id='main'>
-<section id='home'>
-<div id='hello'>
-<h1>HELLO.</h1>
-<h2>Welcome to my website.</h2>
-</div>
-<div id='hint'>
-<p>Scroll down to check me out.</p>
-<a class='icon-downArrow' href='#about' id='go'></a>
-</div>
-</section>
-<section id='about'>
-<h1>About Me</h1>
-<h2>I build useful things.</h2>
-<p>Desktop, mobile, web, or embedded&mdash;you name it, I can do it.</p>
-<h2>Learning is my job.</h2>
-<p>And I'm pretty good at it, too. Even if I don't have the experience you're looking for, you can count on my ability to familiarize myself with your project and workflow in record time.</p>
-<h2><a href="res/Resume Eddie Wang.pdf" target="_blank">My resume</a></h2>
-<p>I study computer science at Stanford University, and I interned the past two summers at Intel's Data Center Solutions Group. I'm well-versed in Java, Javascript, and C, and I'm also comfortable working in C#, C++, Haskell, and Ruby.</p>
-</section>
-<section id='portfolio'>
-<h1>Things I've Built</h1>
-<div class='slideshow'>
-<article class='slide'>
-<h2>ComBoy</h2>
-<h3>A combo generator for extreme martial artists</h3>
-<img src='pic/comboy.png'>
-<p>An invaluable training tool for extreme martial artists, ComBoy intelligently generates valid move sequences based on the user's desired length and difficulty. Comprehensive settings and tweaks allow users to tailor the generated combinations to their own style or emphasize certain moves and transitions, thereby optimizing their training time. Combos are serialized as JSON, so users can import, edit, and share their favorites.</p>
-<p>ComBoy is compatible with Android 1.6+, and the source and .apk are available from <a href="https://github.com/eddiew/ComBoy">my github</a>.</p>
-</article>
-<article class='slide'>
-<h2>Rational Team Concert Query App</h2>
-<img src='pic/RTCQueryApp.png'>
-<p>A fellow intern and I wrote this app for our manager at Intel, who wanted a one-click portal to all the important project information. The app's front-end is an excel spreadsheet with some Visual Basic scripting that handles user input and parses the query results into nice looking charts (which I can't show here because of Intel's IP protection policies). Its back-end is a java program that runs the specified query and creates a .csv file with the results.</p>
-</article>
-<article class='slide'>
-<h2>Helix HSL</h2>
-<h3>Color picking for humans</h3>
-<canvas id='helixDemo'></canvas>
-<input name='type' onclick='redraw();' type='radio' value='standard'>Standard</input>
-<input name='type' onclick='redraw();' type='radio' value='saturated'>Helix-Saturated</input>
-<input checked name='type' onclick='redraw();' type='radio' value='helix'>Helix</input>
-<p>The RGB color model is great for communicating to computers, but it's not so great when it comes to humans. Can you tell what <i>#8FC0E3</i> will look like? <span id="hint">(Hint)</span> I can't either, unless I have the computer show me first.</p>
-<p>The HSL color model provides a more intuitive way to choose a color, where instead of red, green, and blue components you specify a color's hue, saturation, and luminance. However, standard HSL still falls short when you have to create a color <i>theme</i>. Switch the color bar to standard mode and look at the secondary colors (yellow, cyan, and magenta). Notice how jarring they are? At a given luminance, standard HSL gives different intensity levels to different hues. Switch back to helix HSL and you'll notice that's no longer a problem.</p>
-<p>The helical spectrum is not only prettier and more intuitive, but because of its guarantee of constant luminosity it's also a better fit for graphic design and data visualization!</p>
-<p>Helix-Saturated is a middle-ground between the standard and helical HSL color models for use when luminance uniformity is not absolutely necessary. It combines the smoothness of the helical model with the pop of the standard model, and it manages to be neither boring nor jarring.</p>
-<p>This project was inspired by <a href="https://www.mrao.cam.ac.uk/~dag/CUBEHELIX/" target="_blank">Dave Green's Cubehelix color scheme</a>.</p>
-</article>
-<ul class='slidenav'>
-<li></li>
-<li></li>
-<li></li>
-</ul>
-</div>
-</section>
-<section id='contact'>
-<h1>Contact Me</h1>
-<h2>Email:</h2>
-<p>eddiew@stanford.edu</p>
-</section>
-</main>
-<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
-<script src="js/all-cbfbf0cf42b.js"></script>
-</body>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='text/html; charset=utf-8' http-equiv='content-type'>
+    <meta content="Eddie Wang's Portfolio Website" name='description'>
+    <meta content='Eddie Wang' name='keywords'>
+    <title>Eddie Wang</title>
+    <link href='pic/favicon.ico' rel='shortcut icon'>
+    <link href='http://fonts.googleapis.com/css?family=Muli:300' rel='stylesheet'>
+    <link rel="stylesheet" href="css/normalize-cba240c653d.css">
+    <link rel="stylesheet" href="css/main-cbbe510f18e.css">
+    <link rel="stylesheet" href="css/slides-cbfc2bc36a9.css">
+    <script>document.documentElement.className="";</script>
+  </head>
+  <!-- Erase those doubts; This website is my own work only. -->
+  <!-- DEBUG MODE -->
+  <body>
+    <nav id='nav'>
+      <header>
+        <h1>Eddie Wang</h1>
+        <p>eddiew@stanford.edu</p>
+      </header>
+      <ul id='navlist'>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul id='linkList'>
+        <li><a href="https://www.linkedin.com/profile/view?id=282089664" class="icon-linkedin" target="_blank"></a></li>
+        <li><a href="https://github.com/eddiew" class="icon-github" target="_blank"></a></li>
+        <li><a href="mailto:eddiew@stanford.edu" class="icon-email"></a></li>
+      </ul>
+    </nav>
+    <main id='main'>
+      <section id='home'>
+        <div id='hello'>
+          <h1>HELLO.</h1>
+          <h2>Welcome to my website.</h2>
+        </div>
+        <div id='hint'>
+          <p>Scroll down to check me out.</p>
+          <a class='icon-downArrow' href='#about' id='go'></a>
+        </div>
+      </section>
+      <section id='about'>
+        <h1>Who Am I?</h1>
+        <h2>The long and short of it</h2>
+        <p>I am currently a Software Development Intern at Intel's Data Center Solutions Group, where I code project management and automation tools for the server motherboard firmware validation team. During the school year, I study computer science at Stanford University, work on a potpourri of projects with my friends, and generally have an awesome time. I compete regularly in programming contests, so I have a strong background in CS theory even for a Stanford student.</p>
+        <h2>I build useful things.</h2>
+        <p>Potential impact is one of the biggest things that I look for in any opportunity. Software, in my opinion, should be a tool that enables people to accomplish more.</p>
+        <h2>Learning is my job.</h2>
+        <p>And I'm pretty good at it, too. Even if I don't have the experience you're looking for, you can count on me to familiarize myself with your project and workflow in record time.</p>
+        <h2><a href="res/Resume Eddie Wang.pdf" target="_blank">My resume</a></h2>
+      </section>
+      <section id='portfolio'>
+        <h1>Things I've Built</h1>
+        <div class='slideshow'>
+          <article class='slide'>
+            <h2>ComBoy</h2>
+            <h3>A combo generator for extreme martial artists</h3>
+            <img src='pic/comboy.png'>
+            <p>An invaluable training tool for extreme martial artists, ComBoy intelligently generates valid move sequences based on the user's desired length and difficulty. Comprehensive settings and tweaks allow users to tailor the generated combinations to their own style or emphasize certain moves and transitions, thereby optimizing their training time. Combos are serialized as JSON, so users can import, edit, and share their favorites.</p>
+            <p>ComBoy is compatible with Android 1.6+, and the source and .apk are available from <a href="https://github.com/eddiew/ComBoy">my github</a>.</p>
+          </article>
+          <article class='slide'>
+            <h2>Rational Team Concert Query App</h2>
+            <img src='pic/RTCQueryApp.png'>
+            <p>A fellow intern and I wrote this app for our manager at Intel, who wanted a one-click portal to all the important project information. The app's front-end is an excel spreadsheet with some Visual Basic scripting that handles user input and parses the query results into nice looking charts (which I can't show here because of Intel's IP protection policies). Its back-end is a java program that runs the specified query and creates a .csv file with the results.</p>
+          </article>
+          <article class='slide'>
+            <h2>Helix HSL</h2>
+            <h3>Color picking for humans</h3>
+            <canvas id='helixDemo'></canvas>
+            <input name='type' onclick='redraw();' type='radio' value='standard'>Standard</input>
+            <input name='type' onclick='redraw();' type='radio' value='saturated'>Helix-Saturated</input>
+            <input checked name='type' onclick='redraw();' type='radio' value='helix'>Helix</input>
+            <p>The RGB color model is great for communicating to computers, but it's not so great when it comes to humans. Can you tell what <i>#8FC0E3</i> will look like? <span id="hint">(Hint)</span> I can't either, unless I have the computer show me first.</p>
+            <p>The HSL color model provides a more intuitive way to choose a color, where instead of red, green, and blue components you specify a color's hue, saturation, and luminance. However, standard HSL still falls short when you have to create a color <i>theme</i>. Switch the color bar to standard mode and look at the secondary colors (yellow, cyan, and magenta). Notice how jarring they are? At a given luminance, standard HSL gives different intensity levels to different hues. Switch back to helix HSL and you'll notice that's no longer a problem.</p>
+            <p>The helical spectrum is not only prettier and more intuitive, but because of its guarantee of constant luminosity it's also a better fit for graphic design and data visualization!</p>
+            <p>Helix-Saturated is a middle-ground between the standard and helical HSL color models for use when luminance uniformity is not absolutely necessary. It combines the smoothness of the helical model with the pop of the standard model, and it manages to be neither boring nor jarring.</p>
+            <p>This project was inspired by <a href="https://www.mrao.cam.ac.uk/~dag/CUBEHELIX/" target="_blank">Dave Green's Cubehelix color scheme</a>.</p>
+          </article>
+        </div>
+      </section>
+      <section id='contact'>
+        <h1>Contact Me</h1>
+        <h2>Email:</h2>
+        <p><a href="mailto:eddiew@stanford.edu">eddiew@stanford.edu</a></p>
+        <h2>LinkedIn:</h2>
+        <p><a href="https://www.linkedin.com/profile/view?id=282089664" target="_blank">https://www.linkedin.com/profile/view?id=282089664</a></p>
+        <h2>GitHub:</h2>
+        <p><a href="https://github.com/eddiew" target="_blank">https://github.com/eddiew</a></p>
+      </section>
+    </main>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+    <script src="js/body-cbd2c52464b.js"></script>
+    <script src="js/slides-cbeacf005b0.js"></script>
+    <script src="js/helixHSL-cb3435fa266.js"></script>
+  </body>
 </html>
