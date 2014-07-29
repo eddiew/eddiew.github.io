@@ -1,6 +1,6 @@
 "use strict";
 //$(function() {
-$(window).load(function() {
+$window.load(function() {
 	$('.slideshow').map(function() {return new Slideshow($(this));});
 });
 

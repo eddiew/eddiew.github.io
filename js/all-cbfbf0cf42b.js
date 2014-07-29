@@ -87,7 +87,8 @@ $(function() {
 	});
 });
 "use strict";
-$(function() {
+//$(function() {
+$(window).load(function() {
 	$('.slideshow').map(function() {return new Slideshow($(this));});
 });
 
