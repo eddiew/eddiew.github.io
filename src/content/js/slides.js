@@ -10,9 +10,9 @@ function Slideshow(slideshow) {
 	this.activeSlideIdx = 0,
 	this.slideTimerId,
 	this.slides = slideshow.children('.slide');
-	this.navDots = slideshow.find('.slidenav:last-child li');
+	var dotsList = document.createElement('ul');
+	dotsList.className = "slidenav";
 	// Set slideshow height to match tallest slide
-	// TODO: center slides vertically?
 	var tallestSlideHeight = 0,
 		tallestSlideIdx = 0;
 	this.slides.each(function(idx) {
@@ -20,8 +20,11 @@ function Slideshow(slideshow) {
 			tallestSlideHeight = $(this).innerHeight();
 			tallestSlideIdx = idx;
 		}
+		dotsList.appendChild(document.createElement('li'));
 	}).
 	eq(tallestSlideIdx).css('position','static');
+	slideshow.append(dotsList);
+	this.navDots = $(dotsList.children);
 	this.slides.each(function() {
 		$(this).css('top', tallestSlideHeight / 2 - $(this).innerHeight() / 2);
 	});
