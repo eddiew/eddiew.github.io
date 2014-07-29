@@ -153,13 +153,13 @@ body {
 			right: 0;
 			list-style: none;
 			padding: 0;
-			margin: 0 auto;
+			margin: $phiRems auto;
 			text-align: center;
 
 			li {
 				font-size: 2rem;
 				display: inline-block;
-				margin: 1rem $phiFracRems;
+				margin: 0 $phiFracRems;
 			}
 		}
 	}
