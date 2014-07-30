@@ -1,0 +1,16 @@
+# Logfile created on 2014-07-29 17:45:24 -0700 by logger.rb/41954
+I, [2014-07-29T17:45:24.174228 #6740]  INFO -- : 0:  rake (10.3.2) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/rake-10.3.2.gemspec
+I, [2014-07-29T17:45:24.174228 #6740]  INFO -- : 0:  rack (1.5.2) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/rack-1.5.2.gemspec
+I, [2014-07-29T17:45:24.175228 #6740]  INFO -- : 0:  adsf (1.2.0) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/adsf-1.2.0.gemspec
+I, [2014-07-29T17:45:24.176228 #6740]  INFO -- : 0:  colored (1.2) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/colored-1.2.gemspec
+I, [2014-07-29T17:45:24.554756 #6740]  INFO -- : 0:  cri (2.6.1) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/cri-2.6.1.gemspec
+I, [2014-07-29T17:45:24.865718 #6740]  INFO -- : 0:  execjs (2.2.1) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/execjs-2.2.1.gemspec
+I, [2014-07-29T17:45:25.345554 #6740]  INFO -- : 0:  tilt (2.0.1) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/tilt-2.0.1.gemspec
+I, [2014-07-29T17:45:25.346555 #6740]  INFO -- : 0:  haml (4.0.5) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/haml-4.0.5.gemspec
+I, [2014-07-29T17:45:25.347557 #6740]  INFO -- : 0:  json (1.8.1) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-07-29T17:45:27.221062 #6740]  INFO -- : 0:  nanoc (3.7.1) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/nanoc-3.7.1.gemspec
+I, [2014-07-29T17:45:27.820062 #6740]  INFO -- : 0:  nanoc-cachebuster (0.3.1) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/nanoc-cachebuster-0.3.1.gemspec
+I, [2014-07-29T17:45:27.821066 #6740]  INFO -- : 0:  rainpress (1.0) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/rainpress-1.0.gemspec
+I, [2014-07-29T17:45:29.080388 #6740]  INFO -- : 0:  sass (3.3.11) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/sass-3.3.11.gemspec
+I, [2014-07-29T17:45:29.556686 #6740]  INFO -- : 0:  uglifier (2.5.3) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/uglifier-2.5.3.gemspec
+I, [2014-07-29T17:45:29.557699 #6740]  INFO -- : 0:  bundler (1.5.1) from C:/Ruby200-x64/lib/ruby/gems/2.0.0/specifications/bundler-1.5.1.gemspec
