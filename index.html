@@ -48,22 +48,29 @@
       <section id='about'>
         <h1>Who Am I?</h1>
         <h2>The long and short of it</h2>
-        <p>I am currently a Software Development Intern at Intel's Data Center Solutions Group, where I code project management and automation tools for the server motherboard firmware validation team. During the school year, I study computer science at Stanford University, work on a potpourri of projects with my friends, and generally have an awesome time. I compete regularly in programming contests, so I have a strong background in CS theory even for a Stanford student.</p>
-        <h2>I build useful things.</h2>
-        <p>Potential impact is one of the biggest things that I look for in any opportunity. Software, in my opinion, should be a tool that enables people to accomplish more.</p>
+        <p>I'm a freshman at Stanford University, and I plan to major in Computer Science. For the past 2 summers, I was a Software Engineering Intern at Intel, where I wrote project management and automation web apps for the server firmware validation team. I'm always working on a myriad of side projects, and I love seeing what I can accomplish by flexing my technical mojo.</p>
+        <h2>I code with a purpose.</h2>
+        <p>I'm always looking for potential impact in my opportunities. Be it to help others or to foster my own personal growth, I code with a purpose. Gadgets and gizmos, in my opinion, should enable people to do more than they otherwise could. They shouldn't get in the way, and I take care that my own creations don't either.</p>
         <h2>Learning is my job.</h2>
         <p>And I'm pretty good at it, too. Even if I don't have the experience you're looking for, you can count on me to familiarize myself with your project and workflow in record time.</p>
         <h2><a href="res/Resume Eddie Wang.pdf" target="_blank">My resume</a></h2>
+        <p>Hire me! You won't regret it.</p>
       </section>
       <section id='portfolio'>
         <h1>Things I've Built</h1>
         <div class='slideshow'>
           <article class='slide'>
+            <h2>TreeHacks Website and Coding Challenge</h2>
+            <h3>Stanford's National Hackathon</h3>
+            <img src='pic/treehacks-logo.jpg'>
+            <p>TreeHacks will be Stanford's first national hackathon, and I'm part of the 4-person team that built the <a href="https://www.treehacks.com" target="_blank">website</a>. I'm also a co-developer of our coding challenge (it's an easter egg, so I won't link it here). I did full-stack work on both, using Node on the main site, Rails for the coding challenge, and Postgres on the back-end. We've had thousands of users on the main application site and hundreds go through the coding challenge.</p>
+          </article>
+          <article class='slide'>
             <h2>ComBoy</h2>
             <h3>A combo generator for extreme martial artists</h3>
             <img src='pic/comboy.png'>
             <p>An invaluable training tool for extreme martial artists, ComBoy intelligently generates valid move sequences based on the user's desired length and difficulty. Comprehensive settings and tweaks allow users to tailor the generated combinations to their own style or emphasize certain moves and transitions, thereby optimizing their training time. Combos are serialized as JSON, so users can import, edit, and share their favorites.</p>
-            <p>ComBoy is compatible with Android 1.6+, and the source and .apk are available from <a href="https://github.com/eddiew/ComBoy">my github</a>.</p>
+            <p>ComBoy is compatible with Android 1.6+, and the source and .apk are available from <a href="https://github.com/eddiew/ComBoy" target="_blank">my github</a>.</p>
           </article>
           <article class='slide'>
             <h2>Rational Team Concert Query App</h2>
@@ -77,8 +84,8 @@
             <input name='type' onclick='redraw();' type='radio' value='standard'>Standard</input>
             <input name='type' onclick='redraw();' type='radio' value='saturated'>Helix-Saturated</input>
             <input checked name='type' onclick='redraw();' type='radio' value='helix'>Helix</input>
-            <p>The RGB color model is great for communicating to computers, but it's not so great when it comes to humans. Can you tell what <i>#8FC0E3</i> will look like? <span id="hint">(Hint)</span> I can't either, unless I have the computer show me first.</p>
-            <p>The HSL color model provides a more intuitive way to choose a color, where instead of red, green, and blue components you specify a color's hue, saturation, and luminance. However, standard HSL still falls short when you have to create a color <i>theme</i>. Switch the color bar to standard mode and look at the secondary colors (yellow, cyan, and magenta). Notice how jarring they are? At a given luminance, standard HSL gives different intensity levels to different hues. Switch back to helix HSL and you'll notice that's no longer a problem.</p>
+            <p>The RGB color model is great for communicating to computers, but it's not so great when it comes to humans. Can you tell what <i>#8FC0E3</i> will look like? <!--<span id="hint">(Hint)</span>--> I can't either&mdash;unless I have the computer show me first.</p>
+            <p>The HSL color model provides a more intuitive for picking a color, where instead of red, green, and blue components you specify a color's hue, saturation, and luminance. However, standard HSL still falls short when you have to pick a color <i>theme</i>. Switch the color bar to standard mode and look at the secondary colors (yellow, cyan, and magenta). Notice how jarring they are? At a given luminance, standard HSL gives different intensity levels to different hues. Switch back to helix HSL and you'll notice that's no longer a problem.</p>
             <p>The helical spectrum is not only prettier and more intuitive, but because of its guarantee of constant luminosity it's also a better fit for graphic design and data visualization!</p>
             <p>Helix-Saturated is a middle-ground between the standard and helical HSL color models for use when luminance uniformity is not absolutely necessary. It combines the smoothness of the helical model with the pop of the standard model, and it manages to be neither boring nor jarring.</p>
             <p>This project was inspired by <a href="https://www.mrao.cam.ac.uk/~dag/CUBEHELIX/" target="_blank">Dave Green's Cubehelix color scheme</a>.</p>

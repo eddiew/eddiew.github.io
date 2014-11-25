@@ -6,18 +6,18 @@ GEM
     colored (1.2)
     cri (2.6.1)
       colored (~> 1.2)
-    execjs (2.2.1)
+    execjs (2.2.2)
     haml (4.0.5)
       tilt
     json (1.8.1)
-    nanoc (3.7.1)
+    nanoc (3.7.4)
       cri (~> 2.3)
     nanoc-cachebuster (0.3.1)
       nanoc (>= 3.3.0)
     rack (1.5.2)
     rainpress (1.0)
-    rake (10.3.2)
-    sass (3.3.11)
+    rake (10.4.0)
+    sass (3.4.9)
     tilt (2.0.1)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
@@ -28,6 +28,7 @@ PLATFORMS
 
 DEPENDENCIES
   adsf
+  cri
   haml
   nanoc
   nanoc-cachebuster
