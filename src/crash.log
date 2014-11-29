@@ -1,43 +1,66 @@
-Crashlog created at 2014-11-25 15:30:44 -0800
+Crashlog created at 2014-11-29 13:25:56 -0800
 
 ===== MESSAGE:
 
-LoadError: cannot load such file -- nanoc/cachebuster
+ExecJS::ProgramError: Unexpected token name «this», expected punc «,» (line: 59, col: 1, pos: 1668)
+
+Error
+    at new JS_Parse_Error (C:\Users\Eddie\AppData\Local\Temp\execjs20141129-7256-15a4n03js:2357:10623)
+    at js_error (C:\Users\Eddie\AppData\Local\Temp\execjs20141129-7256-15a4n03js:2357:10842)
+    at croak (C:\Users\Eddie\AppData\Local\Temp\execjs20141129-7256-15a4n03js:2357:19067)
+    at token_error (C:\Users\Eddie\AppData\Local\Temp\execjs20141129-7256-15a4n03js:2357:19204)
+    at expect_token (C:\Users\Eddie\AppData\Local\Temp\execjs20141129-7256-15a4n03js:2357:19427)
+    at expect (C:\Users\Eddie\AppData\Local\Temp\execjs20141129-7256-15a4n03js:2357:19565)
+    at expr_list (C:\Users\Eddie\AppData\Local\Temp\execjs20141129-7256-15a4n03js:2357:27632)
+    at subscripts (C:\Users\Eddie\AppData\Local\Temp\execjs20141129-7256-15a4n03js:2357:29686)
+    at subscripts (C:\Users\Eddie\AppData\Local\Temp\execjs20141129-7256-15a4n03js:2357:29322)
+    at subscripts (C:\Users\Eddie\AppData\Local\Temp\execjs20141129-7256-15a4n03js:2357:29322)
 
 ===== COMPILATION STACK:
 
-  (empty)
+  - [item]   /js/slides/ (rep default)
 
 ===== STACK TRACE:
 
-  0. lib/cachebuster.rb:1:in `require'
-  1. lib/cachebuster.rb:1:in `<main>'
-  2. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/source_data/code_snippet.rb:36:in `eval'
-  3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/source_data/code_snippet.rb:36:in `load'
-  4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/source_data/site.rb:330:in `block in load_code_snippets'
-  5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/source_data/site.rb:330:in `each'
-  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/source_data/site.rb:330:in `load_code_snippets'
-  7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/source_data/site.rb:242:in `load'
-  8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/command_runner.rb:64:in `load_site'
-  9. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/commands/compile.rb:392:in `run'
-  10. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/command_runner.rb:14:in `block in call'
-  11. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
-  12. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  13. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/command_runner.rb:13:in `call'
-  14. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command_dsl.rb:223:in `block in runner'
-  15. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
-  16. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
-  17. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
-  18. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/commands/nanoc.rb:39:in `block in define'
-  19. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
-  20. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
-  21. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
-  22. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli.rb:59:in `block in run'
-  23. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
-  24. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  25. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli.rb:57:in `run'
-  26. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/bin/nanoc:25:in `<top (required)>'
-  27. C:/Ruby200-x64/bin/nanoc:23:in `load'
+  0. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.2.2/lib/execjs/external_runtime.rb:64:in `extract_result'
+  1. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.2.2/lib/execjs/external_runtime.rb:29:in `exec'
+  2. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/uglifier-2.5.3/lib/uglifier.rb:187:in `run_uglifyjs'
+  3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/uglifier-2.5.3/lib/uglifier.rb:170:in `compile'
+  4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/filters/uglify_js.rb:18:in `run'
+  5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/compilation/filter.rb:121:in `setup_and_run'
+  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/result_data/item_rep.rb:340:in `filter'
+  7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/compilation/item_rep_proxy.rb:47:in `filter'
+  8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/compilation/rule_context.rb:61:in `filter'
+  9. C:/Users/Eddie/prog/eddiew.github.io/src/Rules:34:in `block in parse'
+  10. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/compilation/rule.rb:70:in `instance_eval'
+  11. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/compilation/rule.rb:70:in `apply_to'
+  12. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/compilation/compiler.rb:387:in `compile_rep'
+  13. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/compilation/compiler.rb:343:in `block in compile_reps'
+  14. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/compilation/compiler.rb:336:in `loop'
+  15. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/compilation/compiler.rb:336:in `compile_reps'
+  16. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/compilation/compiler.rb:89:in `run'
+  17. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/base/source_data/site.rb:59:in `compile'
+  18. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/commands/compile.rb:397:in `block in run'
+  19. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/commands/compile.rb:438:in `run_listeners_while'
+  20. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/commands/compile.rb:396:in `run'
+  21. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/command_runner.rb:14:in `block in call'
+  22. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
+  23. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  24. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/command_runner.rb:13:in `call'
+  25. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command_dsl.rb:223:in `block in runner'
+  26. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
+  27. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
+  28. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
+  29. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/commands/nanoc.rb:39:in `block in define'
+  30. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
+  31. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
+  32. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
+  33. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli.rb:59:in `block in run'
+  34. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
+  35. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  36. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib/nanoc/cli.rb:57:in `run'
+  37. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/bin/nanoc:25:in `<top (required)>'
+  38. C:/Ruby200-x64/bin/nanoc:23:in `load'
 
 ===== VERSION INFORMATION:
 
@@ -54,15 +77,15 @@ MINGW32_NT-6.2 EDDIE-PC 1.0.12(0.46/3/2) 2012-07-05 14:56 i686 unknown
   bundler 1.7.4
   colored 1.2
   cri 2.6.1
-  execjs 2.2.1
+  execjs 2.2.2
   haml 4.0.5
   json 1.8.1
-  nanoc 3.7.1
+  nanoc 3.7.4
   nanoc-cachebuster 0.3.1
   rack 1.5.2
   rainpress 1.0
-  rake 10.3.2
-  sass 3.3.11
+  rake 10.4.0
+  sass 3.4.9
   tilt 2.0.1
   uglifier 2.5.3
 
@@ -96,7 +119,7 @@ PROCESSOR_REVISION => "3a09"
 PROMPT => "$P$G"
 PSModulePath => "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\"
 PUBLIC => "C:\\Users\\Public"
-Path => "C:/Ruby200-x64/lib/ruby/gems/2.0.0/bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Haskell\\bin;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\lib\\extralibs\\bin;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files (x86)\\Git\\bin;C:\\MinGW\\bin;C:\\Android\\android-studio\\ndk;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\mingw\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Heroku\\bin;C:\\Program Files (x86)\\git\\cmd;C:\\pypy221;C:\\Python27;C:\\Android\\android-studio\\sdk\\platform-tools;C:\\Program Files (x86)\\LLVM\\bin;C:\\MinGW\\octave\\3.2.4_gcc-4.4.0\\bin;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Ruby200-x64\\bin;C:\\Users\\Eddie\\AppData\\Roaming\\cabal\\bin;C:\\Users\\Eddie\\AppData\\Roaming\\npm"
+Path => "C:/Ruby200-x64/lib/ruby/gems/2.0.0/bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Haskell\\bin;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\lib\\extralibs\\bin;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files (x86)\\Git\\bin;C:\\MinGW\\bin;C:\\Android\\android-studio\\ndk;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Haskell Platform\\2013.2.0.0\\mingw\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Heroku\\bin;C:\\Program Files (x86)\\git\\cmd;C:\\pypy221;C:\\Python27;C:\\Android\\android-studio\\sdk\\platform-tools;C:\\Program Files (x86)\\LLVM\\bin;C:\\MinGW\\octave\\3.2.4_gcc-4.4.0\\bin;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Ruby200-x64\\bin;C:\\Program Files\\OpenAFS\\Common;C:\\Program Files\\OpenAFS\\Client\\Program;C:\\Users\\Eddie\\AppData\\Roaming\\cabal\\bin;C:\\Users\\Eddie\\AppData\\Roaming\\npm"
 ProgramData => "C:\\ProgramData"
 ProgramFiles => "C:\\Program Files"
 ProgramFiles(x86) => "C:\\Program Files (x86)"
@@ -126,18 +149,18 @@ GEM
     colored (1.2)
     cri (2.6.1)
       colored (~> 1.2)
-    execjs (2.2.1)
+    execjs (2.2.2)
     haml (4.0.5)
       tilt
     json (1.8.1)
-    nanoc (3.7.1)
+    nanoc (3.7.4)
       cri (~> 2.3)
     nanoc-cachebuster (0.3.1)
       nanoc (>= 3.3.0)
     rack (1.5.2)
     rainpress (1.0)
-    rake (10.3.2)
-    sass (3.3.11)
+    rake (10.4.0)
+    sass (3.4.9)
     tilt (2.0.1)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
@@ -148,6 +171,7 @@ PLATFORMS
 
 DEPENDENCIES
   adsf
+  cri
   haml
   nanoc
   nanoc-cachebuster
@@ -160,21 +184,26 @@ DEPENDENCIES
 ===== LOAD PATHS:
 
   0. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib
-  1. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/json-1.8.1/lib
-  2. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/haml-4.0.5/lib
-  3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/tilt-2.0.1/lib
-  4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.2.1/lib
-  5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib
-  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/colored-1.2/lib
-  7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/adsf-1.2.0/lib
-  8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/rack-1.5.2/lib
-  9. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/rake-10.3.2/lib
-  10. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/bundler-1.7.4/lib
-  11. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0
-  12. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0/x64-msvcrt
-  13. C:/Ruby200-x64/lib/ruby/site_ruby
-  14. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0
-  15. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0/x64-msvcrt
-  16. C:/Ruby200-x64/lib/ruby/vendor_ruby
-  17. C:/Ruby200-x64/lib/ruby/2.0.0
-  18. C:/Ruby200-x64/lib/ruby/2.0.0/x64-mingw32
+  1. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/uglifier-2.5.3/lib
+  2. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.9/lib
+  3. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/rainpress-1.0/lib
+  4. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-cachebuster-0.3.1/lib
+  5. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/nanoc-3.7.4/lib
+  6. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/json-1.8.1/lib
+  7. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/haml-4.0.5/lib
+  8. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/tilt-2.0.1/lib
+  9. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/execjs-2.2.2/lib
+  10. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/cri-2.6.1/lib
+  11. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/colored-1.2/lib
+  12. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/adsf-1.2.0/lib
+  13. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/rack-1.5.2/lib
+  14. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/rake-10.4.0/lib
+  15. C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/bundler-1.7.4/lib
+  16. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0
+  17. C:/Ruby200-x64/lib/ruby/site_ruby/2.0.0/x64-msvcrt
+  18. C:/Ruby200-x64/lib/ruby/site_ruby
+  19. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0
+  20. C:/Ruby200-x64/lib/ruby/vendor_ruby/2.0.0/x64-msvcrt
+  21. C:/Ruby200-x64/lib/ruby/vendor_ruby
+  22. C:/Ruby200-x64/lib/ruby/2.0.0
+  23. C:/Ruby200-x64/lib/ruby/2.0.0/x64-mingw32

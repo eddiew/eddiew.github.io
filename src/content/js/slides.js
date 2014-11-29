@@ -1,16 +1,22 @@
 "use strict";
 //$(function() {
 $(window).load(function() {
-	$('.slideshow').map(function() {return new Slideshow($(this));});
+	$('.slideshow').map(function() {return new Slideshow($(this), true);});
 });
 
 // SLIDE
 // TODO: Add play/pause controls
-function Slideshow(slideshow) {
+function Slideshow(slideshow, autoSlide) {
 	var self = this;
-	this.activeSlideIdx = 0,
-	this.slideTimerId,
+	this.activeSlideIdx = 0;
+	this.slideTimerId;
 	this.slides = slideshow.children('.slide');
+	this.autoSlide = autoSlide;
+	this.$progressBar;
+	var progressBar = document.createElement('div');
+	progressBar.className = 'progressBar';
+	slideshow.append(progressBar);
+	this.$progressBar = $(progressBar);
 	var dotsList = document.createElement('ul');
 	dotsList.className = "slidenav";
 	// Set slideshow height to match tallest slide
@@ -31,16 +37,26 @@ function Slideshow(slideshow) {
 	});
 	// Set up nav dots
 	this.navDots.each(function(idx) {
-		$(this).on('click', function(e){
-			clearInterval(self.slideTimerId);
+		$(this).on('click', function(e) {
 			self.slideTo(idx);
-			self.autoSlide();
 		});
 	});
 	// Activate 1st slide
 	this.slides.eq(0).addClass('active');
 	this.navDots.eq(0).addClass('active');
-	this.autoSlide();
+	if (autoSlide) this.queueSlide();
+}
+
+Slideshow.prototype.queueSlide = function() {
+	this.$progressBar.stop();
+	var slideshow = this;
+	this.$progressBar.fadeOut(1000, function() {
+		slideshow.$progressBar.width(0);
+		slideshow.$progressBar.show();
+		slideshow.$progressBar.animate({width: '100%'}, 4000, 'linear', function() {
+			slideshow.slide();
+		});
+	});
 }
 
 Slideshow.prototype.slideTo = function(idx) {
@@ -49,15 +65,16 @@ Slideshow.prototype.slideTo = function(idx) {
 	this.slides.eq(idx).addClass('active');
 	this.navDots.eq(idx).addClass('active');
 	this.activeSlideIdx = idx;
+	if (this.autoSlide) {
+		this.queueSlide();
+	}
 };
 
 Slideshow.prototype.slide = function() {
-	this.slideTo((this.activeSlideIdx+1) % this.slides.length);
+	this.slideTo((this.activeSlideIdx + 1) % this.slides.length);
 };
 
 Slideshow.prototype.autoSlide = function() {
-	var slideshow = this;
-	this.slideTimerId = setInterval(function() {
-		slideshow.slide();
-	}, 5000);
+	this.autoSlide = true;
+	this.queueSlide();
 };

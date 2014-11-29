@@ -89,6 +89,12 @@ $colorHeading: #232a2f;
 			}
 		}
 	}
+
+	.progressBar {
+		background: $colorAccent;
+		height: 0.2rem;
+		width: 0;
+	}
 }
 
 
