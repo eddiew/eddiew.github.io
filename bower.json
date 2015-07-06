@@ -1,0 +1,19 @@
+{
+  "name": "eddiew.github.io",
+  "version": "0.0.0",
+  "homepage": "eddiew.io",
+  "authors": [
+    "Eddie Wang <eddiew@stanford.edu>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2"
+  }
+}
